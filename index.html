@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoenn Trotudex</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>POKÉDEX HOENN</h1>
+            <p class="subtitle">Explora todas las rutas y zonas de la región de Hoenn. Información detallada de Pokémon salvajes, probabilidades de aparición y diferencias entre versiones del juego.</p>
+        </header>
+
+        <main id="main-view">
+            <section id="region-overview">
+                <h2>Explorar Zonas de Hoenn</h2>
+                <p>Selecciona una zona para ver información detallada, Pokémon disponibles y datos específicos de cada versión del juego (Rubí, Zafiro, Esmeralda).</p>
+
+                <div class="zone-filters">
+                    <button class="filter-btn active" data-filter="all">Todas las Zonas</button>
+                    <button class="filter-btn" data-filter="town">Pueblos y Ciudades</button>
+                    <button class="filter-btn" data-filter="route">Rutas</button>
+                    <button class="filter-btn" data-filter="cave">Cuevas</button>
+                </div>
+
+                <div class="region-nav">
+                    <div class="zone-card" data-zone="littleroot" data-type="town">
+                        <div class="zone-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Pueblo Villa Raíz</h3>
+                        <p class="zone-desc">Tu aventura comienza aquí. Pueblo tranquilo donde vive el Profesor Abedul.</p>
+                        <div class="zone-meta">
+                            <p><strong>Tipo:</strong> Pueblo Inicial</p>
+                            <p><strong>Rutas Conectadas:</strong> Ruta 101</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="route101" data-type="route">
+                        <div class="zone-icon">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3>Ruta 101</h3>
+                        <p class="zone-desc">Primera ruta de Hoenn. Conecta Villa Raíz con Pueblo Escaso.</p>
+                        <div class="zone-meta">
+                            <p><strong>Terreno:</strong> Hierba Alta</p>
+                            <p><strong>Pokémon:</strong> 6 (Starters + Salvajes)</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="oldale" data-type="town">
+                        <div class="zone-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Pueblo Escaso</h3>
+                        <p class="zone-desc">Pequeño pueblo de Hoenn. Centro de la región con acceso a las rutas adyacentes.</p>
+                        <div class="zone-meta">
+                            <p><strong>Tipo:</strong> Pueblo</p>
+                            <p><strong>Rutas Conectadas:</strong> Ruta 101, 102, 103</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="route102" data-type="route">
+                        <div class="zone-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Ruta 102</h3>
+                        <p class="zone-desc">Ruta al oeste de Pueblo Escaso. Bosque tropical con múltiples caminos.</p>
+                        <div class="zone-meta">
+                            <p><strong>Terreno:</strong> Bosque Tropical</p>
+                            <p><strong>Pokémon:</strong> 16 Encuentros</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="route103" data-type="route">
+                        <div class="zone-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Ruta 103</h3>
+                        <p class="zone-desc">Ruta al norte de Pueblo Escaso. Terreno montañoso con vistas panorámicas.</p>
+                        <div class="zone-meta">
+                            <p><strong>Terreno:</strong> Costa Rocosa</p>
+                            <p><strong>Pokémon:</strong> 13 Encuentros</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="petalburg" data-type="town">
+                        <div class="zone-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3>Ciudad Petalia</h3>
+                        <p class="zone-desc">Primer lugar con Gimnasio en Hoenn. Centro importante de la región con acceso al mar.</p>
+                        <div class="zone-meta">
+                            <p><strong>Tipo:</strong> Ciudad</p>
+                            <p><strong>Gimnasio:</strong> Líder Norman (Tipo Normal)</p>
+                        </div>
+                    </div>
+
+                    <div class="zone-card" data-zone="route104" data-type="route">
+                        <div class="zone-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Ruta 104</h3>
+                        <p class="zone-desc">Ruta al oeste de Ciudad Petalia. Divide el Bosque Petalia en dos zonas con vistas al océano.</p>
+                        <div class="zone-meta">
+                            <p><strong>Terreno:</strong> Litoral Boscoso</p>
+                            <p><strong>Pokémon:</strong> 12 Encuentros</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="coming-soon">
+                    <h3>Próximamente</h3>
+                    <p>Más rutas y zonas de Hoenn se añadirán próximamente. La región tiene 34 rutas en total.</p>
+                </div>
+            </section>
+        </main>
+
+        <section id="zone-detail">
+            <div class="zone-header">
+                <button class="back-btn" id="back-to-main">
+                    <i class="fas fa-arrow-left"></i> Volver al Mapa
+                </button>
+                <h2 class="route-name" id="detail-zone-name">Ruta 101</h2>
+            </div>
+
+            <div class="zone-content">
+                <div id="zone-info-container">
+                    <div class="loading">
+                        <div class="loading-spinner"></div>
+                        <p>Cargando información de la zona...</p>
+                    </div>
+                </div>
+
+                <div id="pokemon-section" style="display: none;">
+                    <h2>Pokémon Salvajes</h2>
+
+                    <div class="version-tabs" id="version-tabs">
+                        <button class="version-tab active" data-version="all">Todas las Versiones</button>
+                        <button class="version-tab" data-version="ruby">Rubí</button>
+                        <button class="version-tab" data-version="sapphire">Zafiro</button>
+                        <button class="version-tab" data-version="emerald">Esmeralda</button>
+                    </div>
+
+                    <div class="version-note">
+                        <p><i class="fas fa-info-circle"></i> <strong>Nota:</strong> Los Pokémon disponibles pueden variar según la versión (Rubí, Zafiro o Esmeralda). Haz clic en <strong>Detalles</strong> para ver la información completa del encuentro.</p>
+                    </div>
+
+                    <div class="pokemon-grid" id="pokemon-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Pokédex Hoenn - Proyecto no oficial de fans. Todos los datos de Pokémon provienen de <a href="https://pokeapi.co/" target="_blank" style="color: var(--emerald-light);">PokeAPI</a>.</p>
+            <p>Pokémon es una marca registrada de Nintendo, Game Freak y Creatures Inc.</p>
+            <p>Diseño inspirado en Pokémon Esmeralda. Hoenn cuenta con 34 rutas para explorar.</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
