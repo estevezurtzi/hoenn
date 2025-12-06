@@ -3,113 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoenn Trotudex</title>
+    <meta name="description" content="Pokédex Hoenn - Explora la región de Hoenn con información detallada de Pokémon salvajes, rutas y encuentros">
+    <meta name="theme-color" content="#0a1f0a">
+    <title>Pokédex Hoenn</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="/images/logo.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="theme-selector" role="toolbar" aria-label="Selector de temas">
+            <button class="theme-btn" data-theme="emerald" title="Tema Esmeralda" aria-label="Seleccionar tema Esmeralda">
+                <i class="fas fa-leaf" aria-hidden="true"></i> Esmeralda
+            </button>
+            <button class="theme-btn" data-theme="ruby" title="Tema Rubí" aria-label="Seleccionar tema Rubí">
+                <i class="fas fa-gem" aria-hidden="true"></i> Rubí
+            </button>
+            <button class="theme-btn" data-theme="sapphire" title="Tema Zafiro" aria-label="Seleccionar tema Zafiro">
+                <i class="fas fa-gem" aria-hidden="true"></i> Zafiro
+            </button>
+        </div>
+
+        <header role="banner">
             <h1>POKÉDEX HOENN</h1>
             <p class="subtitle">Explora todas las rutas y zonas de la región de Hoenn. Información detallada de Pokémon salvajes, probabilidades de aparición y diferencias entre versiones del juego.</p>
         </header>
 
-        <main id="main-view">
+        <main id="main-view" role="main">
             <section id="region-overview">
                 <h2>Explorar Zonas de Hoenn</h2>
                 <p>Selecciona una zona para ver información detallada, Pokémon disponibles y datos específicos de cada versión del juego (Rubí, Zafiro, Esmeralda).</p>
 
-                <div class="zone-filters">
-                    <button class="filter-btn active" data-filter="all">Todas las Zonas</button>
-                    <button class="filter-btn" data-filter="town">Pueblos y Ciudades</button>
-                    <button class="filter-btn" data-filter="route">Rutas</button>
-                    <button class="filter-btn" data-filter="cave">Cuevas</button>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input type="text" id="zone-search" placeholder="Buscar zona o ruta..." autocomplete="off" aria-label="Buscar zonas">
+                        <button id="search-clear" class="search-clear-btn" aria-label="Limpiar búsqueda" style="display: none;">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div id="search-suggestions" class="search-suggestions" role="listbox" aria-label="Sugerencias de búsqueda" style="display: none;"></div>
+                </div>
+
+                <div class="zone-filters" role="group" aria-label="Filtros de zonas">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Todas</button>
+                    <button class="filter-btn" data-filter="town" aria-pressed="false">Ciudades</button>
+                    <button class="filter-btn" data-filter="route" aria-pressed="false">Rutas</button>
+                    <button class="filter-btn" data-filter="cave" aria-pressed="false">Cuevas</button>
+                    <button class="filter-btn" data-filter="forest" aria-pressed="false">Bosques</button>
+                    <button class="filter-btn" data-filter="otros" aria-pressed="false">Otros</button>
                 </div>
 
                 <div class="region-nav">
-                    <div class="zone-card" data-zone="littleroot" data-type="town">
-                        <div class="zone-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h3>Pueblo Villa Raíz</h3>
-                        <p class="zone-desc">Tu aventura comienza aquí. Pueblo tranquilo donde vive el Profesor Abedul.</p>
-                        <div class="zone-meta">
-                            <p><strong>Tipo:</strong> Pueblo Inicial</p>
-                            <p><strong>Rutas Conectadas:</strong> Ruta 101</p>
+                    <div class="zone-section">
+                        <h3 class="section-title"><i class="fas fa-city" aria-hidden="true"></i> Ciudades y Pueblos</h3>
+                        <div class="zone-grid">
+                            <div class="zone-card" data-zone="littleroot" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+                                <h3>Pueblo Villa Raíz</h3>
+                                <p class="zone-desc">Tu aventura comienza aquí. Pueblo tranquilo donde vive el Profesor Abedul.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Pueblo Inicial</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="oldale" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-home"></i></div>
+                                <h3>Pueblo Escaso</h3>
+                                <p class="zone-desc">Pequeño pueblo de Hoenn. Centro de la región con acceso a las rutas adyacentes.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Pueblo</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="petalburg" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-city"></i></div>
+                                <h3>Ciudad Petalia</h3>
+                                <p class="zone-desc">Primer lugar con Gimnasio en Hoenn. Centro importante de la región con acceso al mar.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Norman (Tipo Normal)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="verdanturf" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-leaf"></i></div>
+                                <h3>Pueblo Verdegal</h3>
+                                <p class="zone-desc">Pueblo tranquilo en las tierras altas. Famoso por su fresca brisa y hierba fresca.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Pueblo</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="dewford" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-house"></i></div>
+                                <h3>Pueblo Azuliza</h3>
+                                <p class="zone-desc">Isla al suroeste de Hoenn. Centro de moda de la región con gimnasio de Lucha.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Marcial (Tipo Lucha)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="ferrica" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-gem"></i></div>
+                                <h3>Ciudad Férrica</h3>
+                                <p class="zone-desc">Ciudad minera y comercial. Centro donde revivir Pokémon prehistóricos con fósiles.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Petra (Tipo Roca)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="mauville" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-city"></i></div>
+                                <h3>Ciudad Malvalona</h3>
+                                <p class="zone-desc">Ciudad en el corazón de Hoenn. Famosa por su casino, tienda de bicis y vida nocturna.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Erico (Tipo Eléctrico)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="slateport" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-anchor"></i></div>
+                                <h3>Ciudad Portual</h3>
+                                <p class="zone-desc">Puerto principal de Hoenn. Ciudad más poblada con Museo Oceánico.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Ciudad Portuaria</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="fallarbor" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-mountain"></i></div>
+                                <h3>Pueblo Pardal</h3>
+                                <p class="zone-desc">Pueblecito en la base del Monte Cenizo. Centro de investigación de meteoritos.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Pueblo</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="lavaridge" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-fire"></i></div>
+                                <h3>Pueblo Lavacalda</h3>
+                                <p class="zone-desc">Pueblo con baños termales naturales. Gimnasio de Tipo Fuego.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Candela (Tipo Fuego)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="fortree" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-tree"></i></div>
+                                <h3>Ciudad Arborada</h3>
+                                <p class="zone-desc">Ciudad llena de árboles con casas elevadas en plataformas.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Alana (Tipo Volador)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="lilycove" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-shopping-cart"></i></div>
+                                <h3>Ciudad Calagua</h3>
+                                <p class="zone-desc">Ciudad costera con centro comercial de gran tamaño.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Ciudad Costera</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="mossdeep" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-satellite"></i></div>
+                                <h3>Ciudad Algaria</h3>
+                                <p class="zone-desc">Isla con centro espacial. Gimnasio de Tipo Psíquico.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Vito y Leti (Tipo Psíquico)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="sootopolis" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Arrecípolis</h3>
+                                <p class="zone-desc">Ciudad mítica dentro de un cráter volcánico. Gimnasio de Tipo Agua.</p>
+                                <div class="zone-meta"><p><strong>Gimnasio:</strong> Plubio/Galano (Tipo Agua)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="pacifidlog" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-house-tsunami"></i></div>
+                                <h3>Pueblo Oromar</h3>
+                                <p class="zone-desc">Pueblo construido sobre balsas flotantes sobre una colonia de Corsola.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Pueblo Costero</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="evergrande" data-type="town" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-crown"></i></div>
+                                <h3>Ciudad Colosalia</h3>
+                                <p class="zone-desc">Ciudad final de Hoenn. Sede de la Liga Pokémon y del Campeón Regional.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Ciudad Final</p></div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="zone-card" data-zone="route101" data-type="route">
-                        <div class="zone-icon">
-                            <i class="fas fa-route"></i>
-                        </div>
-                        <h3>Ruta 101</h3>
-                        <p class="zone-desc">Primera ruta de Hoenn. Conecta Villa Raíz con Pueblo Escaso.</p>
-                        <div class="zone-meta">
-                            <p><strong>Terreno:</strong> Hierba Alta</p>
-                            <p><strong>Pokémon:</strong> 6 (Starters + Salvajes)</p>
+                    <div class="zone-section">
+                        <h3 class="section-title"><i class="fas fa-road" aria-hidden="true"></i> Rutas</h3>
+                        <div class="zone-grid">
+                            <div class="zone-card" data-zone="route101" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-route"></i></div>
+                                <h3>Ruta 101</h3>
+                                <p class="zone-desc">Primera ruta de Hoenn. Conecta Villa Raíz con Pueblo Escaso.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Hierba Alta</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route102" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-tree"></i></div>
+                                <h3>Ruta 102</h3>
+                                <p class="zone-desc">Ruta al oeste de Pueblo Escaso. Bosque tropical con múltiples caminos.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Bosque Tropical</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route103" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-mountain"></i></div>
+                                <h3>Ruta 103</h3>
+                                <p class="zone-desc">Ruta al norte de Pueblo Escaso. Terreno montañoso con vistas panorámicas.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Costa Rocosa</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route104" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-leaf"></i></div>
+                                <h3>Ruta 104</h3>
+                                <p class="zone-desc">Ruta al oeste de Ciudad Petalia. Divide el Bosque Petalia en dos zonas.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Litoral Boscoso</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route105" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Ruta 105</h3>
+                                <p class="zone-desc">Ruta marítima entre Ruta 104 y Ruta 106. Hogar del legendario Regice.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Marítima</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route106" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Ruta 106</h3>
+                                <p class="zone-desc">Ruta marítima conecta Pueblo Azuliza con Ruta 105 y Cueva Granito.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Marítima</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route107" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Ruta 107</h3>
+                                <p class="zone-desc">La ruta marina más corta de Hoenn. Llena de entrenadores surfeando.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Marina</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route108" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-ship"></i></div>
+                                <h3>Ruta 108</h3>
+                                <p class="zone-desc">Ruta marina entre Ruta 107 y 109. Hogar de la Nao Abandonada.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Marina</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route109" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Ruta 109</h3>
+                                <p class="zone-desc">Playa junto a Ciudad Portual. Casa de la playa con combates y refrescos.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Marina</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route110" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-route"></i></div>
+                                <h3>Ruta 110</h3>
+                                <p class="zone-desc">El camino de bicis de la región. Conecta Ciudad Malvalona con Ciudad Portual.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Camino de Bicis y Marítima</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route111" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-route"></i></div>
+                                <h3>Ruta 111</h3>
+                                <p class="zone-desc">Ruta dividida por un desierto. Conecta Ciudad Malvalona con Pueblo Pardal.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Desierto y Hierba</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route112" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-mountain"></i></div>
+                                <h3>Ruta 112</h3>
+                                <p class="zone-desc">Ruta escarpada en la base del Monte Cenizo. Acceso mediante teleférico.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Montaña Volcánica</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route113" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-fire"></i></div>
+                                <h3>Ruta 113</h3>
+                                <p class="zone-desc">Ruta cubierta de ceniza volcánica. Hogar del Taller de Vidrio.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Ceniza Volcánica</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route114" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Ruta 114</h3>
+                                <p class="zone-desc">Ruta variada con montaña y cascadas. Hogar de Zangoose y Seviper.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Montaña, Cascada y Hierba</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route115" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-mountain"></i></div>
+                                <h3>Ruta 115</h3>
+                                <p class="zone-desc">Ruta montañosa con playas y bosques. Ideal para pescar y surfear.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Montaña y Playa</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="route116" data-type="route" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-tree"></i></div>
+                                <h3>Ruta 116</h3>
+                                <p class="zone-desc">Ruta terrestre con árboles. Une Ciudad Férrica con Túnel Fervergal.</p>
+                                <div class="zone-meta"><p><strong>Terreno:</strong> Bosque</p></div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="zone-card" data-zone="oldale" data-type="town">
-                        <div class="zone-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h3>Pueblo Escaso</h3>
-                        <p class="zone-desc">Pequeño pueblo de Hoenn. Centro de la región con acceso a las rutas adyacentes.</p>
-                        <div class="zone-meta">
-                            <p><strong>Tipo:</strong> Pueblo</p>
-                            <p><strong>Rutas Conectadas:</strong> Ruta 101, 102, 103</p>
-                        </div>
-                    </div>
-
-                    <div class="zone-card" data-zone="route102" data-type="route">
-                        <div class="zone-icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <h3>Ruta 102</h3>
-                        <p class="zone-desc">Ruta al oeste de Pueblo Escaso. Bosque tropical con múltiples caminos.</p>
-                        <div class="zone-meta">
-                            <p><strong>Terreno:</strong> Bosque Tropical</p>
-                            <p><strong>Pokémon:</strong> 16 Encuentros</p>
-                        </div>
-                    </div>
-
-                    <div class="zone-card" data-zone="route103" data-type="route">
-                        <div class="zone-icon">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <h3>Ruta 103</h3>
-                        <p class="zone-desc">Ruta al norte de Pueblo Escaso. Terreno montañoso con vistas panorámicas.</p>
-                        <div class="zone-meta">
-                            <p><strong>Terreno:</strong> Costa Rocosa</p>
-                            <p><strong>Pokémon:</strong> 13 Encuentros</p>
+                    <div class="zone-section">
+                        <h3 class="section-title"><i class="fas fa-gopuram" aria-hidden="true"></i> Cuevas</h3>
+                        <div class="zone-grid">
+                            <div class="zone-card" data-zone="tunnel-fervergal" data-type="cave" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-gopuram"></i></div>
+                                <h3>Túnel Fervergal</h3>
+                                <p class="zone-desc">Cueva que conecta Ciudad Férrica con Pueblo Verdegal. Requiere golpe roca.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Cueva</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="granite-cave" data-type="cave" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-gopuram"></i></div>
+                                <h3>Cueva Granito</h3>
+                                <p class="zone-desc">Cueva importante con tres zonas: Planta Baja, Sótano 1 y 2.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Cueva (3 zonas)</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="meteor-falls" data-type="cave" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-water"></i></div>
+                                <h3>Cascada Meteoro</h3>
+                                <p class="zone-desc">Cascada mágica con 4 zonas. Único lugar donde encontrar Bagon. Reside Máximo Peñas en Esmeralda.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Cueva (4 zonas)</p></div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="zone-card" data-zone="petalburg" data-type="town">
-                        <div class="zone-icon">
-                            <i class="fas fa-city"></i>
-                        </div>
-                        <h3>Ciudad Petalia</h3>
-                        <p class="zone-desc">Primer lugar con Gimnasio en Hoenn. Centro importante de la región con acceso al mar.</p>
-                        <div class="zone-meta">
-                            <p><strong>Tipo:</strong> Ciudad</p>
-                            <p><strong>Gimnasio:</strong> Líder Norman (Tipo Normal)</p>
+                    <div class="zone-section">
+                        <h3 class="section-title"><i class="fas fa-tree" aria-hidden="true"></i> Bosques</h3>
+                        <div class="zone-grid">
+                            <div class="zone-card" data-zone="petalburgforest" data-type="forest" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-tree"></i></div>
+                                <h3>Bosque Petalia</h3>
+                                <p class="zone-desc">Bosque denso entre Ciudad Petalia y Ruta 104. Hogar de Pokémon tipo planta e insecto.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Bosque Denso</p></div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="zone-card" data-zone="route104" data-type="route">
-                        <div class="zone-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3>Ruta 104</h3>
-                        <p class="zone-desc">Ruta al oeste de Ciudad Petalia. Divide el Bosque Petalia en dos zonas con vistas al océano.</p>
-                        <div class="zone-meta">
-                            <p><strong>Terreno:</strong> Litoral Boscoso</p>
-                            <p><strong>Pokémon:</strong> 12 Encuentros</p>
+                    <div class="zone-section">
+                        <h3 class="section-title"><i class="fas fa-star" aria-hidden="true"></i> Otros</h3>
+                        <div class="zone-grid">
+                            <div class="zone-card" data-zone="abandoned-ship" data-type="otros" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-anchor"></i></div>
+                                <h3>Nao Abandonada</h3>
+                                <p class="zone-desc">Barco naufragado con puzzles y objetos valiosos. Ubicado al norte de Ruta 108.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Landmark</p></div>
+                            </div>
+                            <div class="zone-card" data-zone="mirage-tower" data-type="otros" role="button" tabindex="0">
+                                <div class="zone-icon" aria-hidden="true"><i class="fas fa-wand-magic-sparkles"></i></div>
+                                <h3>Torre Espejismo</h3>
+                                <p class="zone-desc">Torre de arena mágica en el desierto de Ruta 111. Exclusiva de Pokémon Esmeralda. Aparece y desaparece ocasionalmente.</p>
+                                <div class="zone-meta"><p><strong>Tipo:</strong> Landmark</p></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -121,18 +324,18 @@
             </section>
         </main>
 
-        <section id="zone-detail">
+        <section id="zone-detail" role="main" aria-label="Detalles de zona">
             <div class="zone-header">
-                <button class="back-btn" id="back-to-main">
-                    <i class="fas fa-arrow-left"></i> Volver al Mapa
+                <button class="back-btn" id="back-to-main" aria-label="Volver al mapa de zonas">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Volver al Mapa
                 </button>
                 <h2 class="route-name" id="detail-zone-name">Ruta 101</h2>
             </div>
 
             <div class="zone-content">
                 <div id="zone-info-container">
-                    <div class="loading">
-                        <div class="loading-spinner"></div>
+                    <div class="loading" aria-live="polite" aria-busy="true">
+                        <div class="loading-spinner" aria-hidden="true"></div>
                         <p>Cargando información de la zona...</p>
                     </div>
                 </div>
@@ -140,29 +343,38 @@
                 <div id="pokemon-section" style="display: none;">
                     <h2>Pokémon Salvajes</h2>
 
-                    <div class="version-tabs" id="version-tabs">
-                        <button class="version-tab active" data-version="all">Todas las Versiones</button>
-                        <button class="version-tab" data-version="ruby">Rubí</button>
-                        <button class="version-tab" data-version="sapphire">Zafiro</button>
-                        <button class="version-tab" data-version="emerald">Esmeralda</button>
+                    <div class="version-tabs" id="version-tabs" role="tablist">
+                        <button class="version-tab active" data-version="all" role="tab" aria-selected="true">Todas las Versiones</button>
+                        <button class="version-tab" data-version="ruby" role="tab" aria-selected="false">Rubí</button>
+                        <button class="version-tab" data-version="sapphire" role="tab" aria-selected="false">Zafiro</button>
+                        <button class="version-tab" data-version="emerald" role="tab" aria-selected="false">Esmeralda</button>
                     </div>
 
-                    <div class="version-note">
-                        <p><i class="fas fa-info-circle"></i> <strong>Nota:</strong> Los Pokémon disponibles pueden variar según la versión (Rubí, Zafiro o Esmeralda). Haz clic en <strong>Detalles</strong> para ver la información completa del encuentro.</p>
+                    <div class="version-note" role="note">
+                        <p><i class="fas fa-info-circle" aria-hidden="true"></i> <strong>Nota:</strong> Los Pokémon disponibles pueden variar según la versión (Rubí, Zafiro o Esmeralda). Haz clic en <strong>Detalles</strong> para ver la información completa del encuentro.</p>
                     </div>
 
-                    <div class="pokemon-grid" id="pokemon-grid"></div>
+                    <div class="pokemon-grid" id="pokemon-grid" role="region" aria-label="Lista de Pokémon"></div>
+                </div>
+
+                <div class="zone-navigation">
+                    <button class="nav-btn nav-prev" id="prev-zone" title="Zona anterior" aria-label="Zona anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i> Anterior
+                    </button>
+                    <button class="nav-btn nav-next" id="next-zone" title="Siguiente zona" aria-label="Siguiente zona">
+                        Siguiente <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>Pokédex Hoenn - Proyecto no oficial de fans. Todos los datos de Pokémon provienen de <a href="https://pokeapi.co/" target="_blank" style="color: var(--emerald-light);">PokeAPI</a>.</p>
+        <footer role="contentinfo">
+            <p>Pokédex Hoenn - Proyecto no oficial de fans. Todos los datos de Pokémon provienen de <a href="https://pokeapi.co/" target="_blank" rel="noopener noreferrer">PokeAPI</a>.</p>
             <p>Pokémon es una marca registrada de Nintendo, Game Freak y Creatures Inc.</p>
             <p>Diseño inspirado en Pokémon Esmeralda. Hoenn cuenta con 34 rutas para explorar.</p>
         </footer>
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js" defer></script>
 </body>
 </html>

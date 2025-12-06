@@ -2,16 +2,18 @@
   "zonesData": {
     "littleroot": {
       "name": "Pueblo Villa Raíz",
-      "description": "Villa Raíz es un pueblo pequeño y tranquilo ubicado al suroeste de Hoenn. Es el lugar donde comienza la aventura del jugador en los juegos de la tercera generación. Aquí vive el Profesor Abedul, quien regala al jugador su primer Pokémon. El pueblo cuenta con solo tres casas: la del jugador, la del Profesor Abedul y la del rival.",
+      "description": "Villa Raíz es el lugar inicial de Hoenn en donde el protagonista comienza la aventura y donde los entrenadores y los principiantes reciben uno de los tres Pokémon iniciales de Hoenn: Treecko, Torchic o Mudkip, en el laboratorio del profesor Abedul.",
       "image": "images/VillaRaiz.jpg",
       "type": "Pueblo Inicial",
+      "importance": "Es la localidad más pequeña de Hoenn y la menos poblada de la región. Se encuentra al sur de pueblo Escaso, pasando la ruta 101.",
+      "motto": "Un pueblo poco colorido",
       "connections": ["Ruta 101"],
       "isTown": true,
       "locationAreaId": null
     },
     "route101": {
       "name": "Ruta 101",
-      "description": "La Ruta 101 es la primera ruta que los jugadores recorren en Hoenn. Conecta el Pueblo Villa Raíz con el Pueblo Escaso. Es una ruta corta y sencilla, ideal para que los nuevos entrenadores se familiaricen con los combates Pokémon. La ruta está cubierta de hierba alta donde los Pokémon salvajes pueden aparecer.",
+      "description": "Bajando desde Pueblo Escaso, los entrenadores pueden saltar por dos laderas para evitar las cuatro zonas de hierba, esparcidas por toda la ruta. Subiendo desde villa Raíz, hay una ladera y al lado una zona de hierba. Subiendo, hay otra zona de hierba y finalmente, se llega a un camino ancho que lleva a Pueblo Escaso.",
       "image": "images/Ruta_101.jpg",
       "type": "Ruta de Hierba Alta",
       "connections": ["Villa Raíz", "Pueblo Escaso"],
@@ -40,37 +42,61 @@
           "isStarter": true
         },
         {
-          "name": "poochyena",
-          "versions": ["ruby", "sapphire", "emerald"],
-          "method": "walk",
-          "rarity": "muy común"
-        },
-        {
-          "name": "zigzagoon",
-          "versions": ["ruby", "sapphire", "emerald"],
-          "method": "walk",
-          "rarity": "muy común"
-        },
-        {
           "name": "wurmple",
           "versions": ["ruby", "sapphire", "emerald"],
           "method": "walk",
-          "rarity": "común"
+          "rarity": "muy común",
+          "levelRange": "2-3",
+          "encounterRate": "45%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "2-3",
+          "encounterRate": "45%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "2-3",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "2-3",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "2-3",
+          "encounterRate": "45%"
         }
       ]
     },
     "oldale": {
       "name": "Pueblo Escaso",
-      "description": "Pueblo Escaso es un pequeño pueblo ubicado en el corazón de la región de Hoenn. Sirve como punto central de conexión entre varias rutas importantes. El pueblo cuenta con una Pokémon Center, una Poké Mart y varios edificios residenciales. Es aquí donde los entrenadores comienzan a explorar seriamente la región.",
+      "description": "Es pequeño y posee dos casas, un centro Pokémon y una tienda. En este pueblo no hay prácticamente actividad y no hay ni gimnasios ni lugares de combate cerca.",
       "image": "images/pueblo_escaso.jpg",
       "type": "Pueblo",
+      "importance": "Pueblo Escaso es el segundo pueblo más pequeño de Hoenn.",
+      "motto": "Donde nunca pasa nada",
       "connections": ["Ruta 101", "Ruta 102", "Ruta 103"],
       "isTown": true,
       "locationAreaId": null
     },
     "route102": {
       "name": "Ruta 102",
-      "description": "La Ruta 102 es una ruta de bosque tropical ubicada al oeste de Pueblo Escaso. Está cubierta de vegetación densa y tiene varios caminos que zigzaguean entre los árboles. Es común encontrar Pokémon diversos aquí, especialmente aquellos que viven en ambientes boscosos. También puedes encontrar Pokémon en el agua si tienes una caña de pescar.",
+      "description": "Es una ruta llena de árboles y vegetación, y por tanto, llena de hierba y Pokémon salvajes. También hay una zona de agua en la que en la primera visita no se puede pescar ya que todavía no se dispone de ninguna caña. La ruta consta de 2 carteles que informan de los lugares colindantes.",
       "image": "images/ruta_102.jpg",
       "type": "Bosque",
       "connections": ["Pueblo Escaso", "Ciudad Petalia"],
@@ -87,7 +113,7 @@
         },
         {
           "name": "zigzagoon",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["ruby", "sapphire"],
           "method": "walk",
           "rarity": "muy común",
           "levelRange": "3-4",
@@ -95,7 +121,7 @@
         },
         {
           "name": "poochyena",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["ruby", "sapphire"],
           "method": "walk",
           "rarity": "común",
           "levelRange": "3-4",
@@ -103,7 +129,7 @@
         },
         {
           "name": "seedot",
-          "versions": ["ruby", "emerald"],
+          "versions": ["ruby"],
           "method": "walk",
           "rarity": "común",
           "levelRange": "3-4",
@@ -120,6 +146,30 @@
         {
           "name": "surskit",
           "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "3",
+          "encounterRate": "1%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "3-4",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "3-4",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "seedot",
+          "versions": ["emerald"],
           "method": "walk",
           "rarity": "muy raro",
           "levelRange": "3",
@@ -209,19 +259,84 @@
     },
     "petalburg": {
       "name": "Ciudad Petalia",
-      "description": "Ciudad Petalia es la primera ciudad importante en Hoenn y hogar del Gimnasio Petalia, liderado por Norman. Aunque se puede visitar desde el principio, el Gimnasio solo se puede desafiar tras obtener cuatro medallas. La ciudad tiene conexiones con Pueblo Escaso, la Ruta 104 y el Bosque Petalia.",
+      "description": "Ciudad Petalia es la primera ciudad importante en Hoenn y hogar del Gimnasio Petalia, liderado por Norman. Aunque se puede visitar desde el principio, el Gimnasio solo se puede desafiar tras obtener cuatro medallas. La ciudad es un punto de conexión entre Pueblo Escaso y Ciudad Férrica, con el Bosque Petalia de por medio.",
       "image": "images/Ciudad_Petalia.jpg",
       "type": "Ciudad",
+      "importance": "Primera ciudad con Gimnasio en Hoenn. Su líder es Norman, el padre del jugador.",
+      "motto": "Donde las personas viven en armonía con la naturaleza",
       "connections": ["Ruta 102", "Ruta 104"],
       "isTown": true,
-      "locationAreaId": null
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "marill",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "goldeen",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "goldeen",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "corphish",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "corphish",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
     },
     "route104": {
       "name": "Ruta 104",
-      "description": "La Ruta 104 es una ruta costera ubicada al oeste de Ciudad Petalia. Divide el Bosque Petalia en dos partes y ofrece vistas panorámicas del océano. La ruta es larga pero accesible con varios entrenadores para luchar y objetos por recoger.",
+      "description": "La ruta 104 es una ruta terrestre que se encuentra en el oeste de Hoenn. Al norte se encuentra la Ciudad Férrica, al este se encuentra la Ciudad Petalia y al sur la ruta 105. La ruta se encuentra dividida en dos partes por el Bosque Petalia.",
       "image": "images/Ruta_104.jpg",
       "type": "Litoral",
-      "connections": ["Ciudad Petalia", "Bosque Petalia", "Ruta 105", "Ciudad Férrica"],
+      "connections": [
+        "Ciudad Petalia",
+        "Bosque Petalia",
+        "Ruta 105",
+        "Ciudad Férrica"
+      ],
       "isTown": false,
       "locationAreaId": "hoenn-route-104-area",
       "pokemonList": [
@@ -235,7 +350,7 @@
         },
         {
           "name": "poochyena",
-          "versions": ["sapphire", "emerald"],
+          "versions": ["emerald"],
           "method": "walk",
           "rarity": "muy común",
           "levelRange": "4-5",
@@ -243,11 +358,19 @@
         },
         {
           "name": "wurmple",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["ruby", "sapphire"],
           "method": "walk",
           "rarity": "común",
           "levelRange": "4-5",
           "encounterRate": "30%"
+        },
+        {
+          "name": "wurmple",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "4-5",
+          "encounterRate": "20%"
         },
         {
           "name": "marill",
@@ -261,7 +384,7 @@
           "name": "taillow",
           "versions": ["ruby", "sapphire", "emerald"],
           "method": "walk",
-          "rarity": "raro",
+          "rarity": "común",
           "levelRange": "4-5",
           "encounterRate": "10%"
         },
@@ -317,7 +440,7 @@
     },
     "route103": {
       "name": "Ruta 103",
-      "description": "La Ruta 103 es una ruta costera ubicada al norte de Pueblo Escaso. El terreno es rocoso con acceso al océano, ideal para encontrar Pokémon de tipo agua. Aquí puedes encontrar Pokémon caminando por las rocas así como en el agua si tienes caña de pescar.",
+      "description": "La ruta 103 se puede dividir en 3 zonas: zona oeste, zona marina y zona este. En la zona oeste de esta ruta el jugador se encontrará por primera vez con Bruno/Aura y al hablarle le retará a un combate. En esta parte no hay mucho por hacer, pero, cuando ya se disponga de la MO surf se puede ir al otro lado de la ruta para ir a la siguiente ciudad.",
       "image": "images/ruta_103.jpg",
       "type": "Litoral",
       "connections": ["Pueblo Escaso", "Ruta 110", "Cueva Cambiante"],
@@ -326,7 +449,7 @@
       "pokemonList": [
         {
           "name": "zigzagoon",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["ruby", "sapphire"],
           "method": "walk",
           "rarity": "muy común",
           "levelRange": "2-4",
@@ -334,11 +457,27 @@
         },
         {
           "name": "poochyena",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["ruby", "sapphire"],
           "method": "walk",
           "rarity": "común",
           "levelRange": "2-4",
           "encounterRate": "30%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "2-4",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "2-4",
+          "encounterRate": "60%"
         },
         {
           "name": "wingull",
@@ -424,9 +563,2644 @@
           "name": "sharpedo",
           "versions": ["ruby", "sapphire", "emerald"],
           "method": "super-rod",
-          "rarity": "muy raro",
+          "rarity": "muy común",
           "levelRange": "30-35",
           "encounterRate": "40%"
+        }
+      ]
+    },
+    "petalburgforest": {
+      "name": "Bosque Petalia",
+      "description": "El Bosque Petalia es una zona de vegetación muy frondosa que se encuentra en la ruta 104, dividiéndola en una zona norte y otra sur, de manera que cuenta con dos entradas principales, una en cada zona. Hay un tercer acceso al bosque al sureste, que comunica con una zona de la Ruta 104 en la que hay bordillos; si se saltan, hay que volver a entrar al bosque por la entrada principal sur. En su interior se pueden encontrar gran variedad de Pokémon salvajes, algunos autóctonos de este lugar, como Shroomish o Slakoth.",
+      "image": "images/bosque_petalia.jpg",
+      "type": "Bosque Denso",
+      "importance": "El Bosque Petalia es un bosque ubicado entre Ciudad Petalia y Ciudad Férrica. Es el único bosque de la región Hoenn.",
+      "connections": ["Ruta 104"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "zigzagoon",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "5-6",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "5-6",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "wurmple",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "5-6",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "shroomish",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "5-6",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "silcoon",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "5",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "cascoon",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "5",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "taillow",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "5-6",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "slakoth",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "5-6",
+          "encounterRate": "5%"
+        }
+      ]
+    },
+    "route115": {
+      "name": "Ruta 115",
+      "description": "Ruta montañosa con zonas de playa y un pequeño bosque. Se halla al norte de Ciudad Férrica y en ella se puede encontrar una entrada a la Cascada Meteoro. La ruta es ideal para pescar y surfear, con muchas zonas de agua donde habitan Pokémon acuáticos.",
+      "image": "images/ruta_115.jpg",
+      "type": "Ruta Terrestre y Marítima",
+      "connections": ["Cascada Meteoro", "Ciudad Férrica"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-115-area",
+      "pokemonList": [
+        {
+          "name": "taillow",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "23-25",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "swablu",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "23-25",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "jigglypuff",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "24-25",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "swellow",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "25",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "24-26",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "route116": {
+      "name": "Ruta 116",
+      "description": "Ruta terrestre que une Ciudad Férrica con el Túnel Fervergal. En la primera visita hay un miembro del Equipo Magma o Aqua que robó el Wingull llamado Peeko del Sr. Arenque. La ruta es accesible utilizando corte para pasar a través de árboles derribados.",
+      "image": "images/ruta_116.jpg",
+      "type": "Ruta Terrestre",
+      "connections": ["Ciudad Férrica", "Túnel Fervergal"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-116-area",
+      "pokemonList": [
+        {
+          "name": "whismur",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "6-7",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "whismur",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "6",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "6-8",
+          "encounterRate": "28%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "6-8",
+          "encounterRate": "28%"
+        },
+        {
+          "name": "taillow",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "6-8",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "nincada",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "6-7",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "abra",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "7",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "skitty",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "7-8",
+          "encounterRate": "2%"
+        }
+      ]
+    },
+    "tunnel-fervergal": {
+      "name": "Túnel Fervergal",
+      "description": "Túnel que conecta Ciudad Férrica con Pueblo Verdegal. En su interior hay rocas que pueden ser destruidas con golpe roca. La entrada está bloqueada por Equipo Magma/Aqua hasta que se derrota al líder del gimnasio de Ciudad Férrica. El Sr. Arenque pide ayuda para rescatar a su Wingull.",
+      "image": "images/tunel_fervergal.jpg",
+      "type": "Cueva",
+      "connections": ["Ruta 116", "Pueblo Verdegal"],
+      "isTown": false,
+      "locationAreaId": "hoenn-tunnel-fervergal-area",
+      "pokemonList": [
+        {
+          "name": "whismur",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "5-8",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "verdanturf": {
+      "name": "Pueblo Verdegal",
+      "description": "Pequeño pueblo ubicado al norte de la región, caracterizado por sus ventosas tierras altas que siempre huelen a hierba fresca. Casa de los tíos de Blasco y donde vive su prima Clara. Sin gimnasio, pero con tienda Pokémon y edificio de concursos.",
+      "image": "images/pueblo_verdegal.jpg",
+      "type": "Pueblo",
+      "importance": "Pueblo pequeño con una fresca brisa durante el día. Importante para el desarrollo de la historia relacionada con Clara.",
+      "motto": "Las ventosas tierras altas que siempre huelen a hierba fresca",
+      "connections": ["Túnel Fervergal", "Ruta 117", "Guardería Pokémon"],
+      "isTown": true,
+      "locationAreaId": null
+    },
+    "route105": {
+      "name": "Ruta 105",
+      "description": "Ruta marítima con zonas terrestres ubicada en el oeste de Hoenn. Conecta la Ruta 104 con la Ruta 106. Alberga Pokémon acuáticos y es hogar de la legendaria Regice en la Cueva Insular.",
+      "image": "images/ruta_105.jpg",
+      "type": "Ruta Marítima y Terrestre",
+      "connections": ["Ruta 104", "Ruta 106", "Cueva Insular"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-105-area",
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "route106": {
+      "name": "Ruta 106",
+      "description": "Ruta marítima con zona terrestre ubicada en el suroeste de Hoenn. Conecta la Ruta 105, Pueblo Azuliza y Cueva Granito. Ideal para pescar y combatir entrenadores acuáticos.",
+      "image": "images/ruta_106.jpg",
+      "type": "Ruta Marítima y Terrestre",
+      "connections": ["Ruta 105", "Pueblo Azuliza", "Cueva Granito"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-106-area",
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "granite-cave": {
+      "name": "Cueva Granito",
+      "description": "Cueva ubicada al noroeste de Pueblo Azuliza. Es necesario atravesarla durante la historia. Requiere Destello para iluminarla. Al final está Máximo quien entrega MT47 Ala de Acero.",
+      "image": "images/Cueva_Granito_.jpg",
+      "type": "Cueva",
+      "connections": ["Ruta 106", "Pueblo Azuliza"],
+      "isTown": false,
+      "locationAreaId": "hoenn-granite-cave-area",
+      "areas": [
+        {
+          "name": "Planta Baja",
+          "description": "Acceso principal a la cueva. Primera zona de exploración con Pokémon típicos de cuevas.",
+          "pokemonList": [
+            {
+              "name": "makuhita",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "6-10",
+              "encounterRate": "50%"
+            },
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "7-8",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "abra",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "8",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "geodude",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "6-9",
+              "encounterRate": "10%"
+            }
+          ]
+        },
+        {
+          "name": "Sótano 1",
+          "description": "Primera planta subterránea. Pokémon más fuertes. Hogar de Mawile en Rubí y Sableye en Zafiro/Esmeralda.",
+          "pokemonList": [
+            {
+              "name": "aron",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "9-11",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "9-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "abra",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "9",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "makuhita",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "10-11",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "mawile",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "9-11",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "9-11",
+              "encounterRate": "10%"
+            }
+          ]
+        },
+        {
+          "name": "Sótano 2",
+          "description": "Zona más profunda donde Máximo entrega MT47 Ala de Acero. Pokémon fuertes y métodos especiales como Golpe Roca.",
+          "pokemonList": [
+            {
+              "name": "aron",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "10-12",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "10-11",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "mawile",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "10-12",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "10-12",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "abra",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "10",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "geodude",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "Golpe Roca",
+              "rarity": "muy común",
+              "levelRange": "5-20",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "nosepass",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "Golpe Roca",
+              "rarity": "común",
+              "levelRange": "10-20",
+              "encounterRate": "30%"
+            }
+          ]
+        }
+      ]
+    },
+    "dewford": {
+      "name": "Pueblo Azuliza",
+      "description": "Pequeño pueblo en una isla al suroeste de Hoenn. Hogar del segundo gimnasio de tipo lucha dirigido por Marcial. Acceso por barco del señor Arenque desde Ruta 104.",
+      "image": "images/Pueblo_Azuliza.jpg",
+      "type": "Pueblo",
+      "importance": "Isla donde reside el gimnasio de tipo lucha. Popular por la pesca y las leyendas de la Cueva Granito.",
+      "motto": "Un islote en medio del mar azul",
+      "connections": ["Ruta 106", "Ruta 107", "Cueva Granito"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "ferrica": {
+      "name": "Ciudad Férrica",
+      "description": "Ciudad Férrica es la cuarta ciudad más grande de Hoenn, solo superada por Ciudad Portual, Ciudad Calagua y Ciudad Malvalona. Se trata de una ciudad bastante industrializada, destacando en especial la empresa Devon S. A. La ciudad se expandió en gran medida gracias a los trabajos del Cortador, el cual hizo que sus Pokémon usaran corte para abrir en la zona claros donde construir.",
+      "image": "images/Ciudad_Ferrica.jpg",
+      "type": "Ciudad Minera",
+      "importance": "Ciudad Férrica es una de las ciudades más importantes de Hoenn, situada al oeste de la región.",
+      "motto": "La ciudad tecnológica que respeta el medio ambiente",
+      "connections": ["Ruta 104", "Mina de Petra"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "seedot",
+          "versions": ["emerald"],
+          "method": "trade",
+          "rarity": "raro",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "Intercambiar Ralts",
+          "note": "Se obtiene intercambiando a Ralts en la casa al lado del gimnasio"
+        },
+        {
+          "name": "makuhita",
+          "versions": ["ruby", "sapphire"],
+          "method": "trade",
+          "rarity": "raro",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "Intercambiar Slakoth",
+          "note": "Se obtiene intercambiando a Slakoth en la casa al lado del gimnasio"
+        },
+        {
+          "name": "lileep",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "fossil",
+          "rarity": "muy raro",
+          "levelRange": "20",
+          "encounterRate": "Revivir Fósil Raíz",
+          "note": "Se revive usando el Fósil Raíz en Devon S.A."
+        },
+        {
+          "name": "anorith",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "fossil",
+          "rarity": "muy raro",
+          "levelRange": "20",
+          "encounterRate": "Revivir Fósil Garra",
+          "note": "Se revive usando el Fósil Garra en Devon S.A."
+        }
+      ]
+    },
+    "mauville": {
+      "name": "Ciudad Malvalona",
+      "description": "Ciudad situada en el corazón de Hoenn, rodeada de salidas a otros lugares de la región. Es el hogar del Gimnasio Eléctrico de Erico. Famosa por su casino, tienda de bicis y vida nocturna vibrante. Una de las ciudades más importantes y pobladas de Hoenn.",
+      "image": "images/Ciudad_Malvalona.jpg",
+      "type": "Ciudad",
+      "importance": "Casino de Hoenn y el Gimnasio Eléctrico",
+      "motto": "¡Una ciudad que rebosa diversión!",
+      "connections": ["Ruta 110", "Ruta 111", "Ruta 117", "Ruta 118"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": []
+    },
+    "slateport": {
+      "name": "Ciudad Portual",
+      "description": "Puerto principal de la región de Hoenn, ubicado al suroeste. La ciudad más poblada de la región con gran actividad comercial. Hogar del Museo Oceánico y centro de negocios del S.S. Marea, el ferry de la región. No posee gimnasio.",
+      "image": "images/Ciudad_Portual.jpg",
+      "type": "Ciudad Portuaria",
+      "importance": "Principal puerto de Hoenn, centro comercial y cultural",
+      "motto": "El puerto donde se cruzan los caminos de entrenadores y Pokémon",
+      "connections": ["Ruta 109", "Ruta 110", "Ruta 134"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": []
+    },
+    "fallarbor": {
+      "name": "Pueblo Pardal",
+      "description": "Pequeño pueblecito ubicado en la base del Monte Cenizo. Sus tierras fértiles son consecuencia de la ceniza volcánica que cae constantemente. Lugar popular para observaciones astronómicas y hogar de importantes yacimientos fósiles. Centro de investigación de meteoritos con el Profesor Cozmo.",
+      "image": "images/Pueblo_Pardal.jpg",
+      "type": "Pueblo",
+      "importance": "Centro de investigación de meteoritos y observatorio astronómico de Hoenn",
+      "motto": "Una comunidad de granjas y huertos",
+      "connections": ["Ruta 113", "Ruta 114"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": []
+    },
+    "lavaridge": {
+      "name": "Pueblo Lavacalda",
+      "description": "Pequeño pueblo ubicado en la base sur del Monte Cenizo. Su principal atracción son los baños termales naturales mantenidos calientes por la actividad volcánica cercana. Hogar del Gimnasio de Tipo Fuego liderado por Candela y un herbolario con remedios curativos.",
+      "image": "images/Pueblo_Lavacalda.jpg",
+      "type": "Pueblo",
+      "importance": "Baños termales y Gimnasio de Tipo Fuego. Hogar de Candela",
+      "motto": "¡No hay nada más relajante!",
+      "connections": ["Desfiladero", "Ruta 112"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "wynaut",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "egg",
+          "rarity": "único",
+          "levelRange": "5",
+          "encounterRate": "100%",
+          "note": "Huevo regalado por una señora mayor en los baños termales"
+        }
+      ]
+    },
+    "fortree": {
+      "name": "Ciudad Arborada",
+      "description": "Ciudad llena de árboles y vegetación donde las casas se encuentran elevadas en plataformas de madera. Hogar del Gimnasio de Tipo Volador liderado por Alana, donde se obtiene la sexta medalla de Hoenn. Ciudad arbórea que juega con la naturaleza.",
+      "image": "images/Ciudad_Arborada.jpg",
+      "type": "Ciudad",
+      "importance": "Gimnasio de Tipo Volador. Líder Alana. Sexta medalla de Hoenn",
+      "motto": "La ciudad arbórea que juega con la naturaleza",
+      "connections": ["Ruta 119", "Ruta 120"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "skitty",
+          "versions": ["ruby", "sapphire"],
+          "method": "trade",
+          "rarity": "único",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "100%",
+          "note": "Intercambio en la primera casa al norte. Se recibe a cambio de un Pikachu."
+        },
+        {
+          "name": "volbeat",
+          "versions": ["emerald"],
+          "method": "trade",
+          "rarity": "único",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "100%",
+          "note": "Intercambio en la primera casa al norte. Se recibe a cambio de un Plusle."
+        }
+      ]
+    },
+    "lilycove": {
+      "name": "Ciudad Calagua",
+      "description": "Ciudad costera ubicada en la costa este de Hoenn. Punto de conexión importante con el mar. Centro comercial de gran tamaño, salón de concursos y museo de Pokémon. Conexión con el S.S. Marea para viajar a Ciudad Portual. Sin gimnasio.",
+      "image": "images/Ciudad_Calagua.jpg",
+      "type": "Ciudad Costera",
+      "importance": "Centro comercial mayor, salón de concursos, puerto de viaje. Punto de encuentro entre tierra y mar.",
+      "motto": "Allí donde acaba la tierra y empieza el mar",
+      "connections": ["Ruta 121", "Ruta 124", "Guarida Magma/Aqua"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "staryu",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "raro",
+          "levelRange": "25-30",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "25-45",
+          "encounterRate": "85%"
+        }
+      ]
+    },
+    "mossdeep": {
+      "name": "Ciudad Algaria",
+      "description": "Isla ubicada al noreste de Hoenn. Centro espacial con investigaciones científicas. Hogar del Gimnasio de Tipo Psíquico liderado por Vito y Leti, donde se obtiene la septima medalla de Hoenn. Líderes gemelos especializados en Pokémon Psíquicos.",
+      "image": "images/Ciudad_Algaria.jpg",
+      "type": "Ciudad Isla",
+      "importance": "Gimnasio de Tipo Psíquico. Líderes gemelos Vito y Leti. Septima medalla de Hoenn. Centro Espacial.",
+      "motto": "Nuestra divisa: ¡quiere a los Pokémon!",
+      "connections": ["Ruta 124", "Ruta 125", "Ruta 127"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "sharpedo",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "30-35",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "beldum",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "gift",
+          "rarity": "único",
+          "levelRange": "5",
+          "encounterRate": "100%",
+          "note": "Regalo de Máximo tras ganar la Liga Pokémon"
+        }
+      ]
+    },
+    "sootopolis": {
+      "name": "Arrecípolis",
+      "description": "Ciudad ubicada dentro de un cráter volcánico formado por un volcán antiguo. El cráter se llenó de agua de lluvia y se convirtió en una ciudad. Para moverse por la ciudad es necesario subir muchos tramos de escaleras y bucear bajo el mar. Lugar místico donde se encuentra la Cueva Ancestral. Hogar del Gimnasio de Tipo Agua.",
+      "image": "images/Arrecipolis.jpg",
+      "type": "Ciudad Mítica",
+      "importance": "Gimnasio de Tipo Agua. Ciudad dentro de un cráter. Hogar de Cueva Ancestral. Encuentro con Groudon/Kyogre",
+      "motto": "Una ciudad mística que duerme en los brazos de la historia",
+      "connections": ["Ruta 126"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35%",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "30-35",
+          "encounterRate": "80%"
+        },
+        {
+          "name": "gyarados",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "5-45",
+          "encounterRate": "20%"
+        }
+      ]
+    },
+    "pacifidlog": {
+      "name": "Pueblo Oromar",
+      "description": "Pequeño pueblo costero construido sobre balsas flotantes interconectadas por troncos que flotan sobre el agua. Ubicado sobre una colonia de Corsola. El pueblo consta de cinco casas y un centro Pokémon. Sin tienda Pokémon. Lugar tranquilo en el corazón del océano.",
+      "image": "images/Pueblo_Oromar.jpg",
+      "type": "Pueblo Costero",
+      "importance": "Pueblo sobre el agua. Colonia de Corsola. Centro Pokémon flotante",
+      "motto": "Donde el radiante Sol ilumina las aguas cada día",
+      "connections": ["Ruta 131", "Ruta 132"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "25-45",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "sharpedo",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "30-35",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "corsola",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "trade",
+          "rarity": "único",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "100%",
+          "note": "Intercambio por Bellossom en la casa junto al centro Pokémon"
+        },
+        {
+          "name": "horsea",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "trade",
+          "rarity": "único",
+          "levelRange": "Mismo que el Pokémon intercambiado",
+          "encounterRate": "100%",
+          "note": "Intercambio por Bagon en otra casa del pueblo"
+        }
+      ]
+    },
+    "evergrande": {
+      "name": "Ciudad Colosalia",
+      "description": "La última ciudad de la región de Hoenn, ubicada en una pequeña isla al sureste. Centro neurálgico de la región donde se encuentra la Liga Pokémon. Para llegar es necesario hacer surf por la ruta 128 y subir una enorme cascada. La ciudad no tiene casas de residentes, solo la Liga Pokémon, Centro Pokémon y Calle Victoria. Paraíso de flores, mar y Pokémon.",
+      "image": "images/Ciudad_Colosalia.jpg",
+      "type": "Ciudad Final",
+      "importance": "Liga Pokémon. Ciudad final. Centro de poder Pokémon de Hoenn. Sede del Campeón Regional",
+      "motto": "El paraíso de las flores, el mar y los Pokémon",
+      "connections": ["Ruta 128"],
+      "isTown": true,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "luvdisc",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "30-45",
+          "encounterRate": "45%"
+        },
+        {
+          "name": "luvdisc",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "30-35",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "corsola",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "raro",
+          "levelRange": "30-35",
+          "encounterRate": "15%"
+        }
+      ]
+    },
+    "route107": {
+      "name": "Ruta 107",
+      "description": "Una ruta marina corta llena de entrenadores surfeando. Conecta Pueblo Azuliza con la Ruta 108. La ruta marina más corta de Hoenn con dirección oeste-este.",
+      "image": "images/Ruta_107.jpg",
+      "type": "Ruta Marina",
+      "importance": "Ruta marina de transición. Entrenadores surfeadores. Camino a las aguas del sur",
+      "connections": ["Pueblo Azuliza", "Ruta 108"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "route108": {
+      "name": "Ruta 108",
+      "description": "Ruta marina ubicada entre la Ruta 107 y la Ruta 109. Conecta Pueblo Azuliza con las rutas marítimas del sur de Hoenn. Hogar de la Nao Abandonada, un barco en ruinas lleno de misterios y objetos valiosos.",
+      "image": "images/Ruta_108.jpg",
+      "type": "Ruta Marina",
+      "importance": "Ruta marina de transición. Hogar de la Nao Abandonada. Camino a las aguas del sur",
+      "connections": ["Ruta 107", "Ruta 109", "Nao Abandonada"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "abandoned-ship": {
+      "name": "Nao Abandonada",
+      "description": "Barco de pasajeros encallado hace muchos años, antiguamente conocido como el S.S. Cactus. Ubicado al este de Pueblo Azuliza, al norte de la Ruta 108. Lugar misterioso lleno de objetos valiosos y puzzles que resolver. Se divide en zona superficial y zona oculta accesible con surf y buceo.",
+      "image": "images/Nao_Abandonada.jpg",
+      "type": "Landmark",
+      "importance": "Barco naufragado. Puzzles de llaves. MT13 (Rayo Hielo) y MT18 (Danza Lluvia). Intercambios de objetos con Capitán Babor",
+      "connections": ["Ruta 108"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "90%"
+        },
+        {
+          "name": "tentacruel",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "30-35",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "25-35",
+          "encounterRate": "80%"
+        },
+        {
+          "name": "tentacruel",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "común",
+          "levelRange": "20-35",
+          "encounterRate": "20%"
+        }
+      ]
+    },
+    "mirage-tower": {
+      "name": "Torre Espejismo",
+      "description": "Torre de arena que aparece en el desierto de la Ruta 111, solo en Pokémon Esmeralda. Aparece solo ocasionalmente y desaparece si te vas. Requiere una bicicleta de carreras para llegar hasta el final. En la cima se encuentran los fósiles de Lileep y Anorith.",
+      "image": "images/Torre_Espejismo.jpg",
+      "type": "Landmark",
+      "importance": "Torre mágica exclusiva de Esmeralda. Fósiles Lileep y Anorith. Ubicada en el desierto de Ruta 111.",
+      "connections": ["Ruta 111"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "sandshrew",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "20-24",
+          "encounterRate": "50%"
+        },
+        {
+          "name": "trapinch",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "20-24",
+          "encounterRate": "50%"
+        }
+      ]
+    },
+    "meteor-falls": {
+      "name": "Cascada Meteoro",
+      "description": "Cascada mágica ubicada entre las Rutas 114 y 115. Lugar donde impactó un meteorito antiguo. Sitio importante de la región de Hoenn. En Pokémon Esmeralda, aquí reside Máximo Peñas tras vencer la Liga Pokémon. Bagon solo puede encontrarse en esta ubicación.",
+      "image": "images/Cascada_Meteoro.jpg",
+      "type": "Cueva",
+      "importance": "Cascada con meteorito antiguo. Hogar de Bagon. Encuentro con Máximo Peñas en Esmeralda. Acceso desde Rutas 114 y 115.",
+      "connections": ["Ruta 114", "Ruta 115"],
+      "isTown": false,
+      "locationAreaId": null,
+      "zones": [
+        {
+          "name": "Entrada",
+          "description": "Zona de entrada a la cascada. Accesible desde ambas rutas. Presencia de Zubat y Pokémon relacionados con el meteorito.",
+          "pokemonList": [
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "14-20",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "14, 16 y 18",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "14-18",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "5-35",
+              "encounterRate": "90%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "raro",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "20-45",
+              "encounterRate": "100%"
+            }
+          ]
+        },
+        {
+          "name": "Interior de la Cueva",
+          "description": "Zona profunda dentro de la cueva. Presencia mayor de Golbat. Pokémon más fuertes que en la entrada.",
+          "pokemonList": [
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "33, 35, 38 y 40",
+              "encounterRate": "65%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "33, 35, 37 y 39",
+              "encounterRate": "35%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "33, 35, 37 y 39",
+              "encounterRate": "35%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "30-35",
+              "encounterRate": "90%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "raro",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "25-35",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "whiscash",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "30-45",
+              "encounterRate": "20%"
+            }
+          ]
+        },
+        {
+          "name": "Callejón",
+          "description": "Pasaje estrecho en las profundidades de la cascada. Presencia equilibrada de Pokémon de la cueva. Hogar de Bagon, el único lugar donde encontrarlo en Hoenn.",
+          "pokemonList": [
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "33, 35, 37 y 40",
+              "encounterRate": "50%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "35, 37 y 39",
+              "encounterRate": "25%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "35, 37 y 39",
+              "encounterRate": "25%"
+            },
+            {
+              "name": "bagon",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25, 30 y 35",
+              "encounterRate": "25%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "30-35",
+              "encounterRate": "90%"
+            },
+            {
+              "name": "lunatone",
+              "versions": ["sapphire"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "solrock",
+              "versions": ["ruby", "emerald"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "5-35",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "raro",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "25-35",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "whiscash",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "30-45",
+              "encounterRate": "20%"
+            }
+          ]
+        },
+        {
+          "name": "Sala de Máximo Peñas",
+          "description": "Cámara del fondo donde reside Máximo Peñas en Pokémon Esmeralda.",
+          "pokemonList": [
+            {
+              "name": "solrock",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "33, 35, 38 y 40",
+              "encounterRate": "65%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "33, 35, 37 y 39",
+              "encounterRate": "35%"
+            }
+          ]
+        }
+      ]
+    },
+    "route109": {
+      "name": "Ruta 109",
+      "description": "Playa junto a Ciudad Portual. Ruta marítima con zonas terrestres. En la casa de la playa se realizan combates cuya victoria permite comprar refrescos. Dos niños regalan arena fina en la playa. Conecta Ciudad Portual con la Ruta 108.",
+      "image": "images/Ruta_109.jpg",
+      "type": "Ruta Marina",
+      "importance": "Playa de Ciudad Portual. Ruta marina de acceso. Casa de la playa con combates. Fuente de arena fina",
+      "connections": ["Ciudad Portual", "Ruta 108"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "común",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "común",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy común",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "route110": {
+      "name": "Ruta 110",
+      "description": "Es el camino de bicis de la región. Se trata de una ruta donde se pueden tomar dos caminos, la parte baja es un área de hierba alta, mientras que la alta es un camino moderno y más cómodo. También tiene zonas marítimas para surfear.",
+      "image": "images/Ruta_110.jpg",
+      "type": "Camino de Bicis",
+      "importance": "Ruta ciclista entre Ciudad Malvalona y Ciudad Portual. Hogar de Malvalanova (central eléctrica).",
+      "connections": ["Ciudad Malvalona", "Ciudad Portual", "Ruta 103"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-110-area",
+      "pokemonList": [
+        {
+          "name": "electrike",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "12-13",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "zigzagoon",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "12",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "poochyena",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "12",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "gulpin",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "12-13",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "minun",
+          "versions": ["sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "13",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "plusle",
+          "versions": ["ruby", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "13",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "oddish",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "13",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "12",
+          "encounterRate": "8%"
+        },
+        {
+          "name": "plusle",
+          "versions": ["ruby", "emerald"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "12-13",
+          "encounterRate": "2%"
+        },
+        {
+          "name": "minun",
+          "versions": ["sapphire"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "12-13",
+          "encounterRate": "2%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "wingull",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "35%"
+        },
+        {
+          "name": "pelipper",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "raro",
+          "levelRange": "25-30",
+          "encounterRate": "5%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "25-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "tentacool",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "wailmer",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "raro",
+          "levelRange": "25-30",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "route111": {
+      "name": "Ruta 111",
+      "description": "Ruta terrestre que se encuentra dividida en dos partes por un desierto. La ruta conecta Ciudad Malvalona con Pueblo Pardal. En el desierto hay una constante tormenta de arena y se pueden encontrar fósiles.",
+      "image": "images/Ruta_111.jpg",
+      "type": "Desierto",
+      "importance": "Ruta con desierto central. Casa de la Familia Estratega, Posada de la Abuela, Ruinas del Desierto.",
+      "connections": ["Ciudad Malvalona", "Ruta 112", "Ruta 113"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-111-area",
+      "zones": [
+        {
+          "name": "Zonas Sur y Norte",
+          "description": "Áreas de hierba al sur y norte de la ruta, separadas por el desierto central.",
+          "pokemonList": [
+            {
+              "name": "geodude",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "rock-smash",
+              "rarity": "muy común",
+              "levelRange": "5-20",
+              "encounterRate": "100%"
+            },
+            {
+              "name": "marill",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "5-35",
+              "encounterRate": "99%"
+            },
+            {
+              "name": "surskit",
+              "versions": ["ruby", "sapphire"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "20-30",
+              "encounterRate": "1%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["emerald"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "20-30",
+              "encounterRate": "1%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy raro",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy raro",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy raro",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy raro",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy raro",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy raro",
+              "levelRange": "20-45",
+              "encounterRate": "100%"
+            }
+          ]
+        },
+        {
+          "name": "Desierto",
+          "description": "Zona central árida con tormenta de arena constante. Requiere gafas aislantes para atravesarla.",
+          "pokemonList": [
+            {
+              "name": "sandshrew",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "19-21",
+              "encounterRate": "35%"
+            },
+            {
+              "name": "trapinch",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "19-21",
+              "encounterRate": "35%"
+            },
+            {
+              "name": "cacnea",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "19-21",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "cacnea",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "20-22",
+              "encounterRate": "6%"
+            },
+            {
+              "name": "baltoy",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "20-22",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "baltoy",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "19-21",
+              "encounterRate": "24%"
+            }
+          ]
+        }
+      ]
+    },
+    "route112": {
+      "name": "Ruta 112",
+      "description": "Ruta terrestre escarpada en la base del Monte Cenizo. Tiene zonas de hierba pequeñas. Se puede acceder al Monte Cenizo mediante teleférico desde esta ruta.",
+      "image": "images/Ruta_112.jpg",
+      "type": "Montaña Volcánica",
+      "importance": "Ruta montañosa base del Monte Cenizo. Acceso a Pueblo Lavacalda, Senda Ígnea.",
+      "connections": [
+        "Ruta 111",
+        "Pueblo Lavacalda",
+        "Senda Ígnea",
+        "Desfiladero"
+      ],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-112-area",
+      "pokemonList": [
+        {
+          "name": "machop",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "marill",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "numel",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "14-16",
+          "encounterRate": "75%"
+        }
+      ]
+    },
+    "route113": {
+      "name": "Ruta 113",
+      "description": "Ruta terrestre cubierta de ceniza volcánica originada por el Monte Cenizo. La vegetación está oscurecida por la lluvia de ceniza. Hogar del Taller de Vidrio donde se pueden confeccionar artículos con ceniza.",
+      "image": "images/Ruta_113.jpg",
+      "type": "Ceniza Volcánica",
+      "importance": "Ruta con ceniza volcánica. Conecta Pueblo Pardal con Ruta 111. Taller de Vidrio.",
+      "connections": ["Pueblo Pardal", "Ruta 111"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-113-area",
+      "pokemonList": [
+        {
+          "name": "spinda",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "14-16",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "sandshrew",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "slugma",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "skarmory",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "16",
+          "encounterRate": "5%"
+        }
+      ]
+    },
+    "route114": {
+      "name": "Ruta 114",
+      "description": "Ruta terrestre con tres tipos de campo: volcánico, hierba normal y montaña. Hogar de la Cascada Meteoro. Es conocida por ser el único lugar donde se pueden encontrar Zangoose y Seviper.",
+      "image": "images/Ruta_114.jpg",
+      "type": "Montaña y Cascada",
+      "importance": "Ruta variada noroeste de Hoenn. Cascada Meteoro, Casa de Aredia. Zangoose y Seviper únicos.",
+      "connections": ["Pueblo Pardal", "Cascada Meteoro"],
+      "isTown": false,
+      "locationAreaId": "hoenn-route-114-area",
+      "pokemonList": [
+        {
+          "name": "swablu",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "15-17",
+          "encounterRate": "40%"
+        },
+        {
+          "name": "seedot",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "lotad",
+          "versions": ["sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "lombre",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "16 y 18",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "seviper",
+          "versions": ["sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-17",
+          "encounterRate": "19%"
+        },
+        {
+          "name": "nuzleaf",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "16 y 18",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "lombre",
+          "versions": ["sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "16 y 18",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "seviper",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-17",
+          "encounterRate": "9%"
+        },
+        {
+          "name": "zangoose",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-17",
+          "encounterRate": "19%"
+        },
+        {
+          "name": "surskit",
+          "versions": ["ruby", "sapphire"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "15",
+          "encounterRate": "1%"
+        },
+        {
+          "name": "nuzleaf",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy raro",
+          "levelRange": "15",
+          "encounterRate": "1%"
+        },
+        {
+          "name": "geodude",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "rock-smash",
+          "rarity": "muy común",
+          "levelRange": "5-20",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "marill",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "surf",
+          "rarity": "muy común",
+          "levelRange": "5-35",
+          "encounterRate": "99%"
+        },
+        {
+          "name": "surskit",
+          "versions": ["ruby", "sapphire"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "20-30",
+          "encounterRate": "1%"
+        },
+        {
+          "name": "goldeen",
+          "versions": ["emerald"],
+          "method": "surf",
+          "rarity": "muy raro",
+          "levelRange": "20-30",
+          "encounterRate": "1%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy raro",
+          "levelRange": "5-10",
+          "encounterRate": "70%"
+        },
+        {
+          "name": "goldeen",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "old-rod",
+          "rarity": "muy raro",
+          "levelRange": "5-10",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "magikarp",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy raro",
+          "levelRange": "10-30",
+          "encounterRate": "60%"
+        },
+        {
+          "name": "goldeen",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "barboach",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "good-rod",
+          "rarity": "muy raro",
+          "levelRange": "10-30",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "barboach",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "super-rod",
+          "rarity": "muy raro",
+          "levelRange": "20-45",
+          "encounterRate": "100%"
         }
       ]
     }
@@ -453,7 +3227,6 @@
     "ghost": "#705898",
     "dragon": "#7038F8",
     "dark": "#705848",
-    "steel": "#B8B8D0",
-    "fairy": "#EE99AC"
+    "steel": "#B8B8D0"
   }
 }
