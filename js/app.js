@@ -12,7 +12,7 @@ let APP_STATE = {
     versionMap: {},
     zoneEncounters: {},
     pokemonSpecies: {},
-    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109'],
+    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'route117', 'route118', 'route119', 'route120', 'route121', 'route122', 'route123', 'route124', 'route125', 'route126', 'route127', 'route128', 'route129', 'route130', 'route131', 'route132', 'route133', 'route134', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109', 'instituto-meteorologico', 'monte-pirico', 'cueva-cardumen', 'caverna-abisal', 'pilar-celeste', 'calle-victoria', 'isla-del-sur', 'isla-espejismo', 'frente-batalla'],
     versionGroups: {
         'all': [],
         'ruby': ['ruby'],
@@ -309,7 +309,7 @@ async function loadZoneDetail(zoneId) {
     `;
 
     if (zoneData.areas) {
-        zoneInfoHTML += `<h3>Zonas de la Cueva</h3>`;
+        zoneInfoHTML += `<h3>Zonas</h3>`;
         zoneInfoHTML += `<div class="cave-areas-overview">`;
         
         for (const area of zoneData.areas) {
@@ -571,7 +571,7 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
         return;
     }
 
-    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
+    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
         'starter': 'Pokémon Inicial',
         'walk': 'Caminando',
@@ -579,10 +579,11 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
         'old-rod': 'Caña Vieja',
         'good-rod': 'Caña Buena',
         'super-rod': 'Supercaña',
+        'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
         'egg': 'Huevo',
         'gift': 'Regalo',
-        'trade': 'Intercambio Comercial',
+        'trade': 'Intercambio',
         'fossil': 'Revivir Fósil'
     };
 
@@ -620,7 +621,7 @@ function renderPokemonGridHTML(pokemonArray) {
         return `<div class="error-message"><p>No hay Pokémon disponibles para esta zona/versión.</p></div>`;
     }
 
-    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
+    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
         'starter': 'Pokémon Inicial',
         'walk': 'Caminando',
@@ -628,10 +629,11 @@ function renderPokemonGridHTML(pokemonArray) {
         'old-rod': 'Caña Vieja',
         'good-rod': 'Caña Buena',
         'super-rod': 'Supercaña',
+        'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
         'egg': 'Huevo',
         'gift': 'Regalo',
-        'trade': 'Intercambio Comercial',
+        'trade': 'Intercambio',
         'fossil': 'Revivir Fósil'
     };
 
@@ -748,9 +750,10 @@ function getMethodLabel(method) {
         'surf': 'Surfeando',
         'old-rod': 'Caña vieja',
         'good-rod': 'Caña buena',
-        'super-rod': 'Caña suprema',
+        'super-rod': 'Supercaña',
+        'dive': 'Buceando',
         'starter': 'Pokémon Inicial',
-        'trade': 'Intercambio Comercial',
+        'trade': 'Intercambio',
         'fossil': 'Revivir Fósil'
     };
     return methodLabels[method] || (method.charAt(0).toUpperCase() + method.slice(1));
