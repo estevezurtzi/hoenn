@@ -3210,7 +3210,11 @@
       "image": "images/Ruta_117.jpg",
       "type": "Ruta Terrestre",
       "importance": "Ruta con Guardería Pokémon. Camino largo entre ciudad y pueblo. Muchos entrenadores. Require Corte y Surf.",
-      "connections": ["Ciudad Malvalona", "Pueblo Verdegal", "Guardería Pokémon"],
+      "connections": [
+        "Ciudad Malvalona",
+        "Pueblo Verdegal",
+        "Guardería Pokémon"
+      ],
       "isTown": false,
       "locationAreaId": null,
       "pokemonList": [
@@ -3678,7 +3682,12 @@
       "image": "images/Ruta_120.jpg",
       "type": "Ruta Terrestre",
       "importance": "Ruta con lluvia y nubosidad. Contiene Gruta Solar y Tumba Antigua. Máximo Peñas entrega Detector Devon. Acceso a Ruta 121.",
-      "connections": ["Ciudad Arborada", "Ruta 121", "Gruta Solar", "Tumba Antigua"],
+      "connections": [
+        "Ciudad Arborada",
+        "Ruta 121",
+        "Gruta Solar",
+        "Tumba Antigua"
+      ],
       "isTown": false,
       "locationAreaId": null,
       "pokemonList": [
@@ -5818,21 +5827,37 @@
     },
     "pilar-celeste": {
       "name": "Pilar Celeste",
-      "description": "Torre ubicada en medio del mar en la Ruta 131. Sitio sagrado del Clan Meteoro donde habita el legendario Rayquaza en su azotea. Requiere Bici de Carreras para pasar por el suelo quebradizo.",
+      "description": "Torre ubicada en medio del mar en la Ruta 131. Sitio sagrado del Clan Meteoro donde habita el legendario Rayquaza en su azotea. En Rubí y Zafiro se requiere Bici de Carreras para pasar por el suelo quebradizo. En Esmeralda, durante la primera visita, no hay suelo quebradizo ni es necesaria la bicicleta, pero en posteriores visitas el estado cambia. Las paredes del pilar contienen murales que narran la historia de la Regresión Primigenia.",
       "image": "images/Pilar_Celeste.jpg",
       "type": "Otros",
-      "importance": "Torre legendaria. Hogar de Rayquaza. Ubicación clave en la historia de Esmeralda.",
+      "importance": "Torre legendaria. Hogar de Rayquaza. Ubicación clave en la trama de Hoenn. Sitio sagrado del Clan Meteoro.",
       "connections": ["Ruta 131"],
       "isTown": false,
       "locationAreaId": null,
       "areas": [
         {
           "name": "Planta Baja",
-          "description": "Entrada principal a la torre. Acceso a los pisos superiores con Pokémon variados.",
+          "description": "Entrada principal a la torre. Zona de acceso con Pokémon de nivel moderado-alto. Punto de inicio para ascender.",
           "pokemonList": [
             {
               "name": "golbat",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "48-50",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "34-35",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["ruby"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "48-50",
@@ -5840,15 +5865,15 @@
             },
             {
               "name": "sableye",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["sapphire", "emerald"],
               "method": "walk",
               "rarity": "muy común",
-              "levelRange": "48-50",
+              "levelRange": "33-34",
               "encounterRate": "30%"
             },
             {
               "name": "mawile",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "48-50",
@@ -5856,15 +5881,39 @@
             },
             {
               "name": "claydol",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
               "method": "walk",
               "rarity": "común",
               "levelRange": "47-50",
               "encounterRate": "25%"
             },
             {
+              "name": "claydol",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "36-38",
+              "encounterRate": "25%"
+            },
+            {
               "name": "banette",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "48-50",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "banette",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "37-38",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "dusclops",
+              "versions": ["ruby"],
               "method": "walk",
               "rarity": "raro",
               "levelRange": "48-50",
@@ -5873,47 +5922,206 @@
           ]
         },
         {
-          "name": "Piso 1-4",
-          "description": "Pisos intermedios con Pokémon variados. Suelo quebradizo requiere Bici de Carreras.",
+          "name": "Pisos 1 y 2",
+          "description": "Primeros pisos intermedios. Pokémon de mayor dificultad. Suelo quebradizo requiere Bici de Carreras (excepto en Esmeralda en primera visita).",
           "pokemonList": [
             {
               "name": "golbat",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
               "method": "walk",
               "rarity": "muy común",
-              "levelRange": "49-52",
-              "encounterRate": "35%"
+              "levelRange": "51-53",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "34-35",
+              "encounterRate": "30%"
             },
             {
               "name": "sableye",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby"],
               "method": "walk",
               "rarity": "muy común",
-              "levelRange": "49-52",
-              "encounterRate": "35%"
+              "levelRange": "51-53",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "33-34",
+              "encounterRate": "30%"
             },
             {
               "name": "mawile",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
               "method": "walk",
               "rarity": "muy común",
-              "levelRange": "49-52",
+              "levelRange": "51-53",
               "encounterRate": "30%"
+            },
+            {
+              "name": "claydol",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "50-53",
+              "encounterRate": "25%"
+            },
+            {
+              "name": "claydol",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "36-38",
+              "encounterRate": "25%"
+            },
+            {
+              "name": "banette",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "51-53",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "banette",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "37-38",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "dusclops",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "51-53",
+              "encounterRate": "15%"
+            }
+          ]
+        },
+        {
+          "name": "Pisos 3 y 4",
+          "description": "Pisos superiores con Pokémon de máxima dificultad. Zona previa a la azotea. Incluye Altaria como encuentro más raro.",
+          "pokemonList": [
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "54-56",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "34-35",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "54-56",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "33-34",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "mawile",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "54-56",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "claydol",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "54-56",
+              "encounterRate": "19%"
+            },
+            {
+              "name": "claydol",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "36-38",
+              "encounterRate": "19%"
+            },
+            {
+              "name": "banette",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "54-56",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "banette",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "37-38",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "dusclops",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "54-56",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "altaria",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "54-60",
+              "encounterRate": "6%"
+            },
+            {
+              "name": "altaria",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "38-39",
+              "encounterRate": "6%"
             }
           ]
         },
         {
           "name": "Azotea",
-          "description": "Cúspide de la torre. Hogar de Rayquaza, el Pokémon legendario que vela por Hoenn.",
+          "description": "Cúspide de la torre. Hogar del legendario Rayquaza, el Pokémon que protege Hoenn según la leyenda del Clan Meteoro. Aquí el jugador puede capturar a Rayquaza.",
           "pokemonList": [
             {
               "name": "rayquaza",
               "versions": ["ruby", "sapphire", "emerald"],
-              "method": "encounter",
+              "method": "special",
               "rarity": "único",
-              "levelRange": "50",
+              "levelRange": "70",
               "encounterRate": "100%",
-              "note": "Pokémon legendario único en la cima de la torre"
+              "captureRate": "3",
+              "note": "Pokémon legendario único. Protector de Hoenn según la leyenda del Clan Meteoro."
             }
           ]
         }
@@ -5921,23 +6129,23 @@
     },
     "calle-victoria": {
       "name": "Calle Victoria",
-      "description": "Extensa cueva que se debe atravesar como último reto antes de llegar a la Liga Pokémon de Hoenn. Requiere el uso de Destello, Golpe Roca, Fuerza, Surf y Cascada. Llena de entrenadores fuertes y Pokémon salvajes de nivel alto.",
+      "description": "Extensa cueva que se debe atravesar como último reto antes de llegar a la Liga Pokémon de Hoenn. Se requieren las MOs Destello, Golpe Roca, Fuerza, Surf y Cascada para poder atravesarla completamente. Está llena de entrenadores fuertes (incluyendo entrenadores guays y miembros de la Familia Estratega) y Pokémon salvajes de nivel alto. En Rubí/Zafiro el rival Blasco desafía al jugador a la salida, mientras que en Esmeralda lo hace a la entrada.",
       "image": "images/Calle_Victoria.jpg",
       "type": "Cueva",
-      "importance": "Cueva final antes de la Liga Pokémon. Reto crucial para aspirantes a campeones.",
+      "importance": "Cueva final antes de la Liga Pokémon. Reto crucial para aspirantes a campeones. Llena de entrenadores fuertes.",
       "connections": ["Ever Grande", "Liga Pokémon"],
       "isTown": false,
       "locationAreaId": null,
       "areas": [
         {
           "name": "Planta Baja",
-          "description": "Zona de acceso con Pokémon de nivel moderado. Primeros desafíos.",
+          "description": "Zona de acceso a la cueva. Contiene Pokémon de nivel medio-alto. Punto de entrada.",
           "pokemonList": [
             {
               "name": "zubat",
               "versions": ["ruby", "sapphire", "emerald"],
               "method": "walk",
-              "rarity": "muy raro",
+              "rarity": "raro",
               "levelRange": "36",
               "encounterRate": "10%"
             },
@@ -5950,12 +6158,44 @@
               "encounterRate": "25%"
             },
             {
+              "name": "whismur",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "36",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "loudred",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "makuhita",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "36",
+              "encounterRate": "10%"
+            },
+            {
               "name": "hariyama",
               "versions": ["ruby", "sapphire", "emerald"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "38-40",
               "encounterRate": "25%"
+            },
+            {
+              "name": "aron",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "36",
+              "encounterRate": "5%"
             },
             {
               "name": "lairon",
@@ -5969,7 +6209,7 @@
         },
         {
           "name": "Sótano 1",
-          "description": "Nivel subterráneo con Pokémon más fuertes. Accesible mediante Golpe Roca.",
+          "description": "Primer nivel subterráneo con Pokémon de mayor dificultad. Se requiere Golpe Roca para acceder a ciertas zonas.",
           "pokemonList": [
             {
               "name": "golbat",
@@ -5980,20 +6220,52 @@
               "encounterRate": "35%"
             },
             {
+              "name": "mawile",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "38",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "meditite",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "38",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "medicham",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "lairon",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40-42",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "lairon",
+              "versions": ["emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40-42",
+              "encounterRate": "25%"
+            },
+            {
               "name": "hariyama",
               "versions": ["ruby", "sapphire", "emerald"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "38-42",
               "encounterRate": "35%"
-            },
-            {
-              "name": "lairon",
-              "versions": ["ruby", "sapphire", "emerald"],
-              "method": "walk",
-              "rarity": "común",
-              "levelRange": "40-42",
-              "encounterRate": "25%"
             },
             {
               "name": "geodude",
@@ -6015,7 +6287,7 @@
         },
         {
           "name": "Sótano 2",
-          "description": "Nivel más profundo de la cueva. Pokémon de nivel máximo. Acceso a la Liga Pokémon.",
+          "description": "Nivel más profundo de la cueva con Pokémon de máxima dificultad. Contiene zonas con agua, accesibles mediante Surf. Conduce directamente a la Liga Pokémon.",
           "pokemonList": [
             {
               "name": "golbat",
@@ -6027,7 +6299,7 @@
             },
             {
               "name": "sableye",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["sapphire", "emerald"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "40-44",
@@ -6035,19 +6307,107 @@
             },
             {
               "name": "mawile",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby"],
               "method": "walk",
               "rarity": "muy común",
               "levelRange": "40-44",
               "encounterRate": "35%"
             },
             {
+              "name": "mawile",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "40-44",
+              "encounterRate": "5%"
+            },
+            {
               "name": "lairon",
-              "versions": ["ruby", "sapphire", "emerald"],
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40-44",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "lairon",
+              "versions": ["emerald"],
               "method": "walk",
               "rarity": "común",
               "levelRange": "40-44",
               "encounterRate": "25%"
+            },
+            {
+              "name": "medicham",
+              "versions": ["ruby", "sapphire"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "40-44",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "25-40",
+              "encounterRate": "100%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "barboach",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy común",
+              "levelRange": "25-35",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "whiscash",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "raro",
+              "levelRange": "30-45",
+              "encounterRate": "20%"
             }
           ]
         }
@@ -6059,7 +6419,7 @@
       "image": "images/Isla_del_Sur.jpg",
       "type": "Otros",
       "importance": "Isla legendaria exclusiva. Hogar de Latios/Latias. Requiere ticket eón para acceder.",
-      "connections": ["Ciudad Calagua", "S.S. Marea"],
+      "connections": ["Ciudad Calagua", "Ciudad Portual"],
       "isTown": false,
       "locationAreaId": null,
       "pokemonList": [
@@ -6089,13 +6449,13 @@
       "image": "images/Frente_Batalla.jpg",
       "type": "Otros",
       "importance": "Complejo de batalla post-Liga. 7 coliseos con desafíos variados. Premios en Puntos de Batalla.",
-      "connections": ["Ruta 134"],
+      "connections": ["Ruta 130 (Norte)"],
       "isTown": false,
       "locationAreaId": null,
       "pokemonList": [
         {
           "name": "sudowoodo",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["emerald"],
           "method": "encounter",
           "rarity": "único",
           "levelRange": "40",
@@ -6104,7 +6464,7 @@
         },
         {
           "name": "smeargle",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["emerald"],
           "method": "walk",
           "rarity": "muy común",
           "levelRange": "40-55",
@@ -6113,7 +6473,7 @@
         },
         {
           "name": "meowth",
-          "versions": ["ruby", "sapphire", "emerald"],
+          "versions": ["emerald"],
           "method": "trade",
           "rarity": "único",
           "levelRange": "Mismo que Skitty",
@@ -6127,7 +6487,7 @@
       "description": "Isla mágica ubicada en la Ruta 130 que aparece aleatoriamente cada día. Su aparición depende de un número aleatorio que coincide con el valor de personalidad de un Pokémon del equipo. Hogar exclusivo de Wynaut salvajes. Contiene la Baya Lichi.",
       "image": "images/Isla_Espejismo.jpg",
       "type": "Otros",
-      "importance": "Isla legendaria rara. Único lugar para encontrar Wynaut salvaje. Lugar ilusorio.",
+      "importance": "Isla legendaria ultra rara. Único lugar para encontrar Wynaut salvaje. Lugar ilusorio.",
       "connections": ["Ruta 130"],
       "isTown": false,
       "locationAreaId": null,
@@ -6137,9 +6497,766 @@
           "versions": ["ruby", "sapphire", "emerald"],
           "method": "walk",
           "rarity": "muy común",
-          "levelRange": "5-50",
+          "levelRange": "5, 10, 15, 20, 25, 30, 35, 40, 45, 50",
           "encounterRate": "100%",
           "note": "Única especie de Pokémon en esta isla. Aparece con varios niveles."
+        }
+      ]
+    },
+    "tumba-antigua": {
+      "name": "Tumba Antigua",
+      "description": "Cueva ubicada en la Ruta 120, es el lugar de descanso del Pokémon legendario Registeel. Para acceder, se debe resolver el misterio de la Cámara Sellada. En el interior se encuentra Registeel al nivel 40. Se requiere usar Vuelo (en Rubí y Zafiro) o Destello (en Esmeralda) en el centro de la tumba para abrir la puerta.",
+      "image": "images/Tumba_Antigua.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar de Registeel. Ubicación importante en Ruta 120. Requiere resolver Cámara Sellada. Encuentro legendario.",
+      "connections": ["Ruta 120"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "registeel",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "special",
+          "rarity": "único",
+          "levelRange": "40",
+          "encounterRate": "100%",
+          "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
+        }
+      ]
+    },
+    "cueva-insular": {
+      "name": "Cueva Insular",
+      "description": "Cueva ubicada en una isla al noroeste de la Ruta 105. En su interior descansa el Pokémon legendario Regice al nivel 40. Para poder acceder, antes se tendrá que resolver el misterio de la Cámara Sellada. Se requiere un Pokémon que sepa Surf para llegar a la isla. Una vez dentro, se debe leer un acertijo en Braille.",
+      "image": "images/Cueva_Insular.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar de Regice. Ubicación importante en Ruta 105. Requiere resolver Cámara Sellada y Surf para acceder.",
+      "connections": ["Ruta 105", "Cámara Sellada"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "regice",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "special",
+          "rarity": "único",
+          "levelRange": "40",
+          "encounterRate": "100%",
+          "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
+        }
+      ]
+    },
+    "ruinas-desierto": {
+      "name": "Ruinas del Desierto",
+      "description": "Cueva ubicada al sur del desierto de la Ruta 111. En su interior descansa el Pokémon legendario Regirock al nivel 40. Para poder ingresar, antes se tendrá que resolver el misterio de la Cámara Sellada. Una vez dentro, se debe leer las indicaciones en Braille plasmadas en la pared norte. En Rubí se requiere usar Fuerza, mientras que en Esmeralda se debe usar Golpe Roca.",
+      "image": "images/Ruinas_Desierto.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar de Regirock. Ubicación importante en Ruta 111. Requiere resolver Cámara Sellada y leer Braille.",
+      "connections": ["Ruta 111", "Cámara Sellada"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "regirock",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "special",
+          "rarity": "único",
+          "levelRange": "40",
+          "encounterRate": "100%",
+          "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
+        }
+      ]
+    },
+    "cueva-ancestral": {
+      "name": "Cueva Ancestral",
+      "description": "Cueva ubicada al norte de Arrecípolis. Santuario ancestral que es el hogar del Pokémon legendario Groudon (en Rubí) o Kyogre (en Zafiro). Se requiere obtener la esfera roja (en Rubi) o la esfera azul (en Zafiro) y despertar al legendario correspondiente en la Caverna Abisal antes de poder acceder. Contiene múltiples sótanos con diferentes Pokémon salvajes.",
+      "image": "images/Cueva_Ancestral.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar de Groudon/Kyogre. Cueva crucial en la trama de Hoenn. Múltiples niveles con encuentros variados.",
+      "connections": [],
+      "isTown": false,
+      "locationAreaId": null,
+      "areas": [
+        {
+          "name": "Planta Baja",
+          "description": "Primera zona de la cueva con baja dificultad. Pokémon comunes como Zubat y Golbat dominan esta área.",
+          "pokemonList": [
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "28-35",
+              "encounterRate": "90%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "33-36",
+              "encounterRate": "10%"
+            }
+          ]
+        },
+        {
+          "name": "Sótanos 1-5",
+          "description": "Zonas intermedias con mayor variedad de Pokémon. Se encuentran Zubat, Golbat, Sableye y Mawile con tasas variables según la versión.",
+          "pokemonList": [
+            {
+              "name": "zubat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "30-34",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "golbat",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "33-36",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "sableye",
+              "versions": ["sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "30-34",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "mawile",
+              "versions": ["ruby"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "30-34",
+              "encounterRate": "30%"
+            }
+          ]
+        },
+        {
+          "name": "Sótano 6 - Cámara Legendaria",
+          "description": "Zona más profunda de la cueva donde habitan los Pokémon legendarios ancestrales. Groudon aparece en Rubí mientras que Kyogre aparece en Zafiro.",
+          "pokemonList": [
+            {
+              "name": "groudon",
+              "versions": ["ruby"],
+              "method": "special",
+              "rarity": "único",
+              "levelRange": "45",
+              "encounterRate": "100%",
+              "note": "Pokémon legendario exclusivo de Pokémon Rubí. Nivel 45 al momento del encuentro. Debe ser capturado o no volvera a aparecer."
+            },
+            {
+              "name": "kyogre",
+              "versions": ["sapphire"],
+              "method": "special",
+              "rarity": "único",
+              "levelRange": "45",
+              "encounterRate": "100%",
+              "note": "Pokémon legendario que aparece en Pokémon Zafiro y Esmeralda. Nivel 45 al momento del encuentro. Debe ser capturado o no volvera a aparecer."
+            }
+          ]
+        }
+      ]
+    },
+    "zona-safari": {
+      "name": "Zona Safari",
+      "description": "Reserva natural ubicada al oeste de Ciudad Calagua donde se pueden encontrar Pokémon raros que no aparecen normalmente en las rutas de Hoenn. Se requieren 500 P¥ para entrar y se reciben 30 Safari Balls. La zona está dividida en 4 áreas principales. La zona noroeste requiere una bicicleta de carreras para acceder, y la zona noreste una bicicleta acrobática.",
+      "image": "images/Zona_Safari.jpg",
+      "type": "Reserva Natural",
+      "importance": "Zona especial donde se pueden capturar Pokémon exclusivos. Acceso limitado por el sistema de Safari Balls.",
+      "connections": ["Ruta 121 (Sur)"],
+      "isTown": false,
+      "locationAreaId": null,
+      "areas": [
+        {
+          "name": "Sureste (entrada)",
+          "description": "Zona de entrada a la Zona Safari con hierba y agua. Acceso directo desde Ciudad Calagua.",
+          "pokemonList": [
+            {
+              "name": "oddish",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "25-27",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "girafarig",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25-27",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "doduo",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "natu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "wobbuffet",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "pikachu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "25-27",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "gloom",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "25",
+              "encounterRate": "5%"
+            }
+          ]
+        },
+        {
+          "name": "Suroeste",
+          "description": "Zona sur-occidental de la Zona Safari con acceso a agua para pescar y surfear.",
+          "pokemonList": [
+            {
+              "name": "oddish",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "25-27",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "girafarig",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25-27",
+              "encounterRate": "20%"
+            },
+            {
+              "name": "doduo",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "natu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "25",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "wobbuffet",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "pikachu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "25-27",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "gloom",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "25",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "psyduck",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "20-35",
+              "encounterRate": "100%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy raro",
+              "levelRange": "25-35",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "seaking",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy raro",
+              "levelRange": "25-40",
+              "encounterRate": "20%"
+            }
+          ]
+        },
+        {
+          "name": "Noroeste",
+          "description": "Zona noroeste de la Zona Safari. Requiere una bicicleta de carreras para atravesar la pendiente de arena.",
+          "pokemonList": [
+            {
+              "name": "oddish",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "rhyhorn",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "gloom",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "29-31",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "doduo",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "dodrio",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "29-31",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "pinsir",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "27-29",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "psyduck",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy común",
+              "levelRange": "20-35",
+              "encounterRate": "95%"
+            },
+            {
+              "name": "golduck",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "surf",
+              "rarity": "muy raro",
+              "levelRange": "25-40",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "muy común",
+              "levelRange": "5-10",
+              "encounterRate": "70%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "old-rod",
+              "rarity": "común",
+              "levelRange": "5-10",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "muy común",
+              "levelRange": "10-30",
+              "encounterRate": "60%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "good-rod",
+              "rarity": "común",
+              "levelRange": "10-30",
+              "encounterRate": "40%"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy raro",
+              "levelRange": "25-35",
+              "encounterRate": "80%"
+            },
+            {
+              "name": "seaking",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "super-rod",
+              "rarity": "muy raro",
+              "levelRange": "25-40",
+              "encounterRate": "20%"
+            }
+          ]
+        },
+        {
+          "name": "Noreste",
+          "description": "Zona noreste de la Zona Safari. Requiere una bicicleta acrobática para atravesar la pasarela. Posee rocas que se pueden romper con Golpe Roca.",
+          "pokemonList": [
+            {
+              "name": "oddish",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "phanpy",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "gloom",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "29-31",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "natu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "común",
+              "levelRange": "27-29",
+              "encounterRate": "15%"
+            },
+            {
+              "name": "xatu",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "29-31",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "heracross",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "raro",
+              "levelRange": "27-29",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "geodude",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "rock-smash",
+              "rarity": "muy común",
+              "levelRange": "5-30",
+              "encounterRate": "100%"
+            }
+          ]
+        },
+        {
+          "name": "Extensión Sur",
+          "description": "Zona adicional accesible solo en Pokémon Emerald tras haber ganado la Liga Pokémon. Contiene Pokémon de Johto. También permite surfear o pescar.",
+          "pokemonList": [
+            {
+              "name": "mareep",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34-36",
+              "rarity": "común"
+            },
+            {
+              "name": "sunkern",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "33-35",
+              "rarity": "común"
+            },
+            {
+              "name": "aipom",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34",
+              "rarity": "raro"
+            },
+            {
+              "name": "spinarak",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "33",
+              "rarity": "raro"
+            },
+            {
+              "name": "hoothoot",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "35",
+              "rarity": "raro"
+            },
+            {
+              "name": "snubbull",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34",
+              "rarity": "raro"
+            },
+            {
+              "name": "gligar",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "37-40",
+              "rarity": "muy raro"
+            },
+            {
+              "name": "stantler",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "36-39",
+              "rarity": "muy raro"
+            },
+
+            {
+              "name": "wooper",
+              "versions": ["emerald"],
+              "method": "surf",
+              "levelRange": "25-30",
+              "rarity": "común"
+            },
+            {
+              "name": "marill",
+              "versions": ["emerald"],
+              "method": "surf",
+              "levelRange": "25-35",
+              "rarity": "común"
+            },
+            {
+              "name": "quagsire",
+              "versions": ["emerald"],
+              "method": "surf",
+              "levelRange": "35-40",
+              "rarity": "raro"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["emerald"],
+              "method": "old-rod",
+              "levelRange": "25-30",
+              "rarity": "muy común"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["emerald"],
+              "method": "old-rod",
+              "levelRange": "25-30",
+              "rarity": "común"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["emerald"],
+              "method": "good-rod",
+              "levelRange": "25-30",
+              "rarity": "muy común"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["emerald"],
+              "method": "good-rod",
+              "levelRange": "25-30",
+              "rarity": "común"
+            },
+            {
+              "name": "remoraid",
+              "versions": ["emerald"],
+              "method": "good-rod",
+              "levelRange": "30-35",
+              "rarity": "común"
+            },
+            {
+              "name": "magikarp",
+              "versions": ["emerald"],
+              "method": "super-rod",
+              "levelRange": "25-30",
+              "rarity": "muy común"
+            },
+            {
+              "name": "goldeen",
+              "versions": ["emerald"],
+              "method": "super-rod",
+              "levelRange": "25-30",
+              "rarity": "común"
+            },
+            {
+              "name": "remoraid",
+              "versions": ["emerald"],
+              "method": "super-rod",
+              "levelRange": "25-35",
+              "rarity": "común"
+            },
+            {
+              "name": "octillery",
+              "versions": ["emerald"],
+              "method": "super-rod",
+              "levelRange": "35-40",
+              "rarity": "muy raro"
+            }
+          ]
+        },
+
+        {
+          "name": "Extensión Norte",
+          "description": "Zona adicional accesible solo en Pokemon Emerald tras haber ganado la Liga Pokémon. Contiene Pokémon de Johto.",
+          "pokemonList": [
+            {
+              "name": "aipom",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "33-35",
+              "rarity": "común",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "teddiursa",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34-36",
+              "rarity": "común",
+              "encounterRate": "30%"
+            },
+            {
+              "name": "sunkern",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34",
+              "rarity": "raro",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "ledyba",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "33",
+              "rarity": "raro",
+              "encounterRate": "10%"
+            },
+            {
+              "name": "hoothoot",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "35",
+              "rarity": "raro",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "pineco",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "34",
+              "rarity": "raro",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "houndour",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "36-39",
+              "rarity": "muy raro",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "miltank",
+              "versions": ["emerald"],
+              "method": "walk",
+              "levelRange": "37-40",
+              "rarity": "muy raro",
+              "encounterRate": "5%"
+            },
+            {
+              "name": "shuckle",
+              "versions": ["emerald"],
+              "method": "rock-smash",
+              "levelRange": "20-40",
+              "rarity": "comun",
+              "encounterRate": "100%"
+            }
+          ]
         }
       ]
     }
