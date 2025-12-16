@@ -86,7 +86,7 @@
     "oldale": {
       "name": "Pueblo Escaso",
       "description": "Es pequeño y posee dos casas, un centro Pokémon y una tienda. En este pueblo no hay prácticamente actividad y no hay ni gimnasios ni lugares de combate cerca.",
-      "image": "images/pueblo_escaso.jpg",
+      "image": "images/Pueblo_Escaso.jpg",
       "type": "Pueblo",
       "importance": "Pueblo Escaso es el segundo pueblo más pequeño de Hoenn.",
       "motto": "Donde nunca pasa nada",
@@ -97,7 +97,7 @@
     "route102": {
       "name": "Ruta 102",
       "description": "Es una ruta llena de árboles y vegetación, y por tanto, llena de hierba y Pokémon salvajes. También hay una zona de agua en la que en la primera visita no se puede pescar ya que todavía no se dispone de ninguna caña. La ruta consta de 2 carteles que informan de los lugares colindantes.",
-      "image": "images/ruta_102.jpg",
+      "image": "images/Ruta_102.jpg",
       "type": "Bosque",
       "connections": ["Pueblo Escaso", "Ciudad Petalia"],
       "isTown": false,
@@ -441,7 +441,7 @@
     "route103": {
       "name": "Ruta 103",
       "description": "La ruta 103 se puede dividir en 3 zonas: zona oeste, zona marina y zona este. En la zona oeste de esta ruta el jugador se encontrará por primera vez con Bruno/Aura y al hablarle le retará a un combate. En esta parte no hay mucho por hacer, pero, cuando ya se disponga de la MO surf se puede ir al otro lado de la ruta para ir a la siguiente ciudad.",
-      "image": "images/ruta_103.jpg",
+      "image": "images/Ruta_103.jpg",
       "type": "Litoral",
       "connections": ["Pueblo Escaso", "Ruta 110", "Cueva Cambiante"],
       "isTown": false,
@@ -572,7 +572,7 @@
     "petalburgforest": {
       "name": "Bosque Petalia",
       "description": "El Bosque Petalia es una zona de vegetación muy frondosa que se encuentra en la ruta 104, dividiéndola en una zona norte y otra sur, de manera que cuenta con dos entradas principales, una en cada zona. Hay un tercer acceso al bosque al sureste, que comunica con una zona de la Ruta 104 en la que hay bordillos; si se saltan, hay que volver a entrar al bosque por la entrada principal sur. En su interior se pueden encontrar gran variedad de Pokémon salvajes, algunos autóctonos de este lugar, como Shroomish o Slakoth.",
-      "image": "images/bosque_petalia.jpg",
+      "image": "images/Bosque_Petalia.jpg",
       "type": "Bosque Denso",
       "importance": "El Bosque Petalia es un bosque ubicado entre Ciudad Petalia y Ciudad Férrica. Es el único bosque de la región Hoenn.",
       "connections": ["Ruta 104"],
@@ -648,7 +648,7 @@
     "route115": {
       "name": "Ruta 115",
       "description": "Ruta montañosa con zonas de playa y un pequeño bosque. Se halla al norte de Ciudad Férrica y en ella se puede encontrar una entrada a la Cascada Meteoro. La ruta es ideal para pescar y surfear, con muchas zonas de agua donde habitan Pokémon acuáticos.",
-      "image": "images/ruta_115.jpg",
+      "image": "images/Ruta_115.jpg",
       "type": "Ruta Terrestre y Marítima",
       "connections": ["Cascada Meteoro", "Ciudad Férrica"],
       "isTown": false,
@@ -771,7 +771,7 @@
     "route116": {
       "name": "Ruta 116",
       "description": "Ruta terrestre que une Ciudad Férrica con el Túnel Fervergal. En la primera visita hay un miembro del Equipo Magma o Aqua que robó el Wingull llamado Peeko del Sr. Arenque. La ruta es accesible utilizando corte para pasar a través de árboles derribados.",
-      "image": "images/ruta_116.jpg",
+      "image": "images/Ruta_116.jpg",
       "type": "Ruta Terrestre",
       "connections": ["Ciudad Férrica", "Túnel Fervergal"],
       "isTown": false,
@@ -846,7 +846,7 @@
     "tunnel-fervergal": {
       "name": "Túnel Fervergal",
       "description": "Túnel que conecta Ciudad Férrica con Pueblo Verdegal. En su interior hay rocas que pueden ser destruidas con golpe roca. La entrada está bloqueada por Equipo Magma/Aqua hasta que se derrota al líder del gimnasio de Ciudad Férrica. El Sr. Arenque pide ayuda para rescatar a su Wingull.",
-      "image": "images/tunel_fervergal.jpg",
+      "image": "images/Tunel_Fervergal.jpg",
       "type": "Cueva",
       "connections": ["Ruta 116", "Pueblo Verdegal"],
       "isTown": false,
@@ -865,7 +865,7 @@
     "verdanturf": {
       "name": "Pueblo Verdegal",
       "description": "Pequeño pueblo ubicado al norte de la región, caracterizado por sus ventosas tierras altas que siempre huelen a hierba fresca. Casa de los tíos de Blasco y donde vive su prima Clara. Sin gimnasio, pero con tienda Pokémon y edificio de concursos.",
-      "image": "images/pueblo_verdegal.jpg",
+      "image": "images/Pueblo_Verdegal.jpg",
       "type": "Pueblo",
       "importance": "Pueblo pequeño con una fresca brisa durante el día. Importante para el desarrollo de la historia relacionada con Clara.",
       "motto": "Las ventosas tierras altas que siempre huelen a hierba fresca",
@@ -876,7 +876,7 @@
     "route105": {
       "name": "Ruta 105",
       "description": "Ruta marítima con zonas terrestres ubicada en el oeste de Hoenn. Conecta la Ruta 104 con la Ruta 106. Alberga Pokémon acuáticos y es hogar de la legendaria Regice en la Cueva Insular.",
-      "image": "images/ruta_105.jpg",
+      "image": "images/Ruta_105.jpg",
       "type": "Ruta Marítima y Terrestre",
       "connections": ["Ruta 104", "Ruta 106", "Cueva Insular"],
       "isTown": false,
@@ -959,7 +959,7 @@
     "route106": {
       "name": "Ruta 106",
       "description": "Ruta marítima con zona terrestre ubicada en el suroeste de Hoenn. Conecta la Ruta 105, Pueblo Azuliza y Cueva Granito. Ideal para pescar y combatir entrenadores acuáticos.",
-      "image": "images/ruta_106.jpg",
+      "image": "images/Ruta_106.jpg",
       "type": "Ruta Marítima y Terrestre",
       "connections": ["Ruta 105", "Pueblo Azuliza", "Cueva Granito"],
       "isTown": false,
@@ -5395,10 +5395,10 @@
     },
     "monte-pirico": {
       "name": "Monte Pírico",
-      "description": "Cementerio ubicado en una isla cercana a Ciudad Calagua, accesible mediante Surf o Vuelo. Monte Pírico es un lugar sagrado donde los entrenadores entierran a sus Pokémon fallecidos y van a visitarlos. Lugar clave en la historia donde se encuentran las esferas de Kyogre y Groudon.",
+      "description": "Cementerio ubicado en una isla cercana a Ciudad Calagua, accesible mediante Surf o Vuelo. Monte Pírico es un lugar sagrado donde los entrenadores entierran a sus Pokémon fallecidos y van a visitarlos.",
       "image": "images/Ruta_122.jpg",
       "type": "Otros",
-      "importance": "Cementerio Pokémon. Ubicación clave en la historia para las esferas de los legendarios Kyogre y Groudon.",
+      "importance": "Cementerio Pokémon.",
       "connections": ["Ruta 122", "Ciudad Calagua"],
       "isTown": false,
       "locationAreaId": null,
@@ -6116,8 +6116,8 @@
             {
               "name": "rayquaza",
               "versions": ["ruby", "sapphire", "emerald"],
-              "method": "special",
-              "rarity": "único",
+              "method": "encounter",
+              "rarity": "legendario",
               "levelRange": "70",
               "encounterRate": "100%",
               "captureRate": "3",
@@ -6427,7 +6427,7 @@
           "name": "latias",
           "versions": ["ruby", "emerald"],
           "method": "encounter",
-          "rarity": "único",
+          "rarity": "legendario",
           "levelRange": "50",
           "encounterRate": "100%",
           "note": "Pokémon legendario. Aparece en Rubí y Esmeralda (si elegiste azul)"
@@ -6435,8 +6435,8 @@
         {
           "name": "latios",
           "versions": ["sapphire", "emerald"],
-          "method": "encounter",
-          "rarity": "único",
+            "method": "encounter",
+          "rarity": "legendario",
           "levelRange": "50",
           "encounterRate": "100%",
           "note": "Pokémon legendario. Aparece en Zafiro y Esmeralda (si elegiste rojo)"
@@ -6516,8 +6516,8 @@
         {
           "name": "registeel",
           "versions": ["ruby", "sapphire", "emerald"],
-          "method": "special",
-          "rarity": "único",
+          "method": "encounter",
+          "rarity": "legendario",
           "levelRange": "40",
           "encounterRate": "100%",
           "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
@@ -6537,8 +6537,8 @@
         {
           "name": "regice",
           "versions": ["ruby", "sapphire", "emerald"],
-          "method": "special",
-          "rarity": "único",
+          "method": "encounter",
+          "rarity": "legendario",
           "levelRange": "40",
           "encounterRate": "100%",
           "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
@@ -6558,8 +6558,8 @@
         {
           "name": "regirock",
           "versions": ["ruby", "sapphire", "emerald"],
-          "method": "special",
-          "rarity": "único",
+          "method": "encounter",
+          "rarity": "legendario",
           "levelRange": "40",
           "encounterRate": "100%",
           "note": "Pokémon legendario único ubicado en el interior de la cueva. Debe ser capturado para obtenerlo."
@@ -6643,8 +6643,8 @@
             {
               "name": "groudon",
               "versions": ["ruby"],
-              "method": "special",
-              "rarity": "único",
+              "method": "encounter",
+              "rarity": "legendario",
               "levelRange": "45",
               "encounterRate": "100%",
               "note": "Pokémon legendario exclusivo de Pokémon Rubí. Nivel 45 al momento del encuentro. Debe ser capturado o no volvera a aparecer."
@@ -6652,8 +6652,8 @@
             {
               "name": "kyogre",
               "versions": ["sapphire"],
-              "method": "special",
-              "rarity": "único",
+              "method": "encounter",
+              "rarity": "legendario",
               "levelRange": "45",
               "encounterRate": "100%",
               "note": "Pokémon legendario que aparece en Pokémon Zafiro y Esmeralda. Nivel 45 al momento del encuentro. Debe ser capturado o no volvera a aparecer."
@@ -7257,6 +7257,282 @@
               "encounterRate": "100%"
             }
           ]
+        }
+      ]
+    },
+    "malvalanova": {
+      "name": "Malvalanova",
+      "description": "Central eléctrica subterránea ubicada bajo la Ruta 110 donde viven Pokémon eléctricos. Se accede sumergiéndose en el agua con Surf. Tras obtener la Medalla Equilibrio, Erico entrega la llave sótano para activar el generador.",
+      "image": "images/Malvalanova.jpg",
+      "type": "Central Eléctrica",
+      "importance": "Ubicación importante donde se encuentra a Erico. Recompensa con MT24 (Rayo) tras desactivar el generador.",
+      "connections": ["Ruta 110"],
+      "isTown": false,
+      "locationAreaId": null,
+      "areas": [
+        {
+          "name": "Entrada",
+          "description": "Zona de entrada con Pokémon eléctricos comunes.",
+          "pokemonList": [
+            {
+              "name": "magnemite",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "22-26",
+              "encounterRate": "50%"
+            },
+            {
+              "name": "voltorb",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "22-26",
+              "encounterRate": "50%"
+            }
+          ]
+        },
+        {
+          "name": "Sótano",
+          "description": "Zona más profunda con Pokémon eléctricos y algunas formas evolucionadas.",
+          "pokemonList": [
+            {
+              "name": "magnemite",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "22-26",
+              "encounterRate": "49%"
+            },
+            {
+              "name": "voltorb",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy común",
+              "levelRange": "22-26",
+              "encounterRate": "49%"
+            },
+            {
+              "name": "magneton",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "26",
+              "encounterRate": "1%"
+            },
+            {
+              "name": "electrode",
+              "versions": ["ruby", "sapphire", "emerald"],
+              "method": "walk",
+              "rarity": "muy raro",
+              "levelRange": "26",
+              "encounterRate": "1%"
+            }
+          ]
+        }
+      ]
+    },
+    "senda-ignea": {
+      "name": "Senda Ígnea",
+      "description": "Paso bajo el Monte Cenizo en la Ruta 112 donde cae constantemente ceniza volcánica. El teleférico está bloqueado al principio, obligando a tomar este sendero. Contiene rocas que se pueden mover con Fuerza.",
+      "image": "images/Senda_Ígnea.jpg",
+      "type": "Sendero Volcánico",
+      "importance": "Paso obligatorio en el juego. Contiene MT06 (Tóxico) y Piedra Fuego.",
+      "connections": ["Ruta 112", "Monte Cenizo"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "numel",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "30%"
+        },
+        {
+          "name": "koffing",
+          "versions": ["ruby", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "grimer",
+          "versions": ["sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "torkoal",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14-16",
+          "encounterRate": "18%"
+        },
+        {
+          "name": "machop",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15-16",
+          "encounterRate": "15%"
+        },
+        {
+          "name": "slugma",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "15",
+          "encounterRate": "10%"
+        },
+        {
+          "name": "grimer",
+          "versions": ["ruby", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14",
+          "encounterRate": "2%"
+        },
+        {
+          "name": "koffing",
+          "versions": ["sapphire"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "14",
+          "encounterRate": "2%"
+        }
+      ]
+    },
+    "desfiladero": {
+      "name": "Desfiladero",
+      "description": "Paso montañoso entre el Monte Cenizo y la Ruta 112 donde cae constantemente ceniza. Conecta dos puntos importantes. Requiere bicicleta acrobática para acceder a algunas zonas.",
+      "image": "images/Desfiladero.jpg",
+      "type": "Paso Montañoso",
+      "importance": "Conexión importante entre zonas. Solo accesible en Pokémon Esmeralda con la Guarida Magma.",
+      "connections": ["Ruta 112", "Monte Cenizo"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "numel",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "18-20",
+          "encounterRate": "55%"
+        },
+        {
+          "name": "numel",
+          "versions": ["sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "20-22",
+          "encounterRate": "55%"
+        },
+        {
+          "name": "machop",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "18-20",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "machop",
+          "versions": ["sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "20-22",
+          "encounterRate": "25%"
+        },
+        {
+          "name": "spoink",
+          "versions": ["ruby"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "18-20",
+          "encounterRate": "20%"
+        },
+        {
+          "name": "spoink",
+          "versions": ["sapphire", "emerald"],
+          "method": "walk",
+          "rarity": "común",
+          "levelRange": "20-22",
+          "encounterRate": "20%"
+        }
+      ]
+    },
+    "isla-origen": {
+      "name": "Isla Origen",
+      "description": "Isla Origen es una isla desolada, en forma de triángulo, perteneciente a una de las 9 Islas que conforman Archi7 (junto a Roca Ombligo), en la que se encuentra el Pokémon singular Deoxys.",
+      "image": "images/Isla_origen.jpg",
+      "type": "Isla Legendaria",
+      "importance": "Se accede por medio de un evento de Nintendo para Pokémon Rojo Fuego, Verde Hoja y Esmeralda, en los cuales se repartía el Ori-Ticket.",
+      "connections": ["Roca Ombligo"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "deoxys",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "30",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "roca-ombligo": {
+      "name": "Roca Ombligo",
+      "description": "Esta isla es una localización especial y secreta que solo es accesible al tener el Misti-Ticket, un objeto exclusivo de evento. La Roca Ombligo se trata de una cueva con largos pasillos y multitud de pisos. En su interior no hay Pokémon salvajes.",
+      "image": "images/Roca_Ombligo.jpg",
+      "type": "Isla Rocosa",
+      "importance": "Es el lugar donde habitan los Pokémon legendarios Lugia y Ho-Oh.",
+      "connections": ["Isla Origen"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "ho-oh",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "70",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "lugia",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "70",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "isla-suprema": {
+      "name": "Isla Suprema",
+      "description": "La Isla Suprema es una isla que solo aparece en Pokémon Esmeralda y en la cual vive Mew. Esta isla solo es accesible llevando el objeto clave mapa viejo, el cual se consigue a través de regalo misterioso mediante una distribución de Nintendo. Sin embargo, dicho objeto solo fue distribuido en Japón.",
+      "image": "images/Isla_Suprema.jpg",
+      "type": "Isla Sagrada",
+      "importance": "Ubicación donde se encuentra el Pokémon legendario Mew.",
+      "connections": [],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "mew",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "30",
+          "encounterRate": "100%"
         }
       ]
     }

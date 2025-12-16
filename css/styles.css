@@ -1105,3 +1105,144 @@ h3 {
         padding: 0.5rem;
     }
 }
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-content p {
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-content a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.footer-content a:hover {
+    color: var(--primary-glow);
+}
+
+.footer-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-light);
+    transition: width 0.3s ease;
+}
+
+.footer-content a:hover::after {
+    width: 100%;
+}
+
+body * {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+body[data-theme] {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#zone-detail {
+    animation: slideInDown 0.4s ease;
+}
+
+#main-view {
+    animation: slideInUp 0.4s ease;
+}
+
+.pokemon-card {
+    animation: fadeIn 0.3s ease;
+}
+
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+    left: 100%;
+}
+
+@media (max-width: 1200px) {
+    .zone-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .zone-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    
+    .pokemon-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    #zone-detail .zone-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .zone-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .zone-card {
+        min-height: 240px;
+    }
+}
+
+.zone-card:active {
+    transform: translateY(-4px);
+}
+
+.pokemon-card:active {
+    transform: translateY(-2px);
+}

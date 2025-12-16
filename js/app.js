@@ -1,4 +1,4 @@
-const POKEAPI = {
+﻿const POKEAPI = {
     baseURL: 'https://pokeapi.co/api/v2',
     spriteBaseURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
     animatedSpriteURL: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/'
@@ -12,7 +12,7 @@ let APP_STATE = {
     versionMap: {},
     zoneEncounters: {},
     pokemonSpecies: {},
-    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'route117', 'route118', 'route119', 'route120', 'route121', 'route122', 'route123', 'route124', 'route125', 'route126', 'route127', 'route128', 'route129', 'route130', 'route131', 'route132', 'route133', 'route134', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109', 'instituto-meteorologico', 'monte-pirico', 'cueva-cardumen', 'caverna-abisal', 'pilar-celeste', 'calle-victoria', 'isla-del-sur', 'isla-espejismo', 'frente-batalla'],
+    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'route117', 'route118', 'route119', 'route120', 'route121', 'route122', 'route123', 'route124', 'route125', 'route126', 'route127', 'route128', 'route129', 'route130', 'route131', 'route132', 'route133', 'route134', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109', 'instituto-meteorologico', 'monte-pirico', 'cueva-cardumen', 'caverna-abisal', 'pilar-celeste', 'calle-victoria', 'tumba-antigua', 'cueva-insular', 'ruinas-desierto', 'cueva-ancestral', 'isla-del-sur', 'isla-espejismo', 'frente-batalla', 'zona-safari', 'malvalanova', 'senda-ignea', 'desfiladero', 'isla-origen', 'roca-ombligo', 'isla-suprema'],
     versionGroups: {
         'all': [],
         'ruby': ['ruby'],
@@ -286,14 +286,14 @@ async function loadZoneDetail(zoneId) {
     DOM_ELEMENTS.zoneInfoContainer.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando información de la zona...</p>
+            <p>Cargando informaciÃ³n de la zona...</p>
         </div>
     `;
 
     let zoneInfoHTML = `
         <div class="zone-info">
             <div>
-                <h3>Información de la Zona</h3>
+                <h3>InformaciÃ³n de la Zona</h3>
                 <p class="zone-description">${zoneData.description}</p>
                 <div class="zone-meta">
                     <p><strong>Tipo:</strong> ${zoneData.type}</p>
@@ -317,7 +317,7 @@ async function loadZoneDetail(zoneId) {
                 <div class="cave-area">
                     <h4>${area.name}</h4>
                     <p class="area-description">${area.description}</p>
-                    <p class="pokemon-count"><strong>${area.pokemonList.length} Pokémon</strong> encontrados en esta zona</p>
+                    <p class="pokemon-count"><strong>${area.pokemonList.length} PokÃ©mon</strong> encontrados en esta zona</p>
                 </div>
             `;
         }
@@ -333,7 +333,7 @@ async function loadZoneDetail(zoneId) {
 
         await loadPokemonForAreas(zoneData.areas);
     } else if (zoneData.zones) {
-        zoneInfoHTML += `<h3>Pokémon Encontrados Aquí</h3>`;
+        zoneInfoHTML += `<h3>PokÃ©mon Encontrados AquÃ­</h3>`;
         
         let totalPokemon = 0;
         for (const zone of zoneData.zones) {
@@ -342,7 +342,7 @@ async function loadZoneDetail(zoneId) {
             totalPokemon += uniquePokemon.size;
         }
         
-        zoneInfoHTML += `<p>Esta zona tiene ${totalPokemon} Pokémon salvajes disponibles en diferentes áreas. Selecciona una versión del juego para ver detalles específicos.</p>`;
+        zoneInfoHTML += `<p>Esta zona tiene ${totalPokemon} PokÃ©mon salvajes disponibles en diferentes Ã¡reas. Selecciona una versiÃ³n del juego para ver detalles especÃ­ficos.</p>`;
 
         DOM_ELEMENTS.pokemonSection.style.display = 'block';
 
@@ -353,8 +353,8 @@ async function loadZoneDetail(zoneId) {
 
         await loadPokemonForZones(zoneData.zones);
     } else if (zoneData.pokemonList) {
-        zoneInfoHTML += `<h3>Pokémon Encontrados Aquí</h3>`;
-        zoneInfoHTML += `<p>Esta zona tiene ${zoneData.pokemonList.length} Pokémon salvajes disponibles. Selecciona una versión del juego para ver detalles específicos. Haz clic en <strong>Detalles</strong> en cualquier Pokémon para ver información completa de encuentro.</p>`;
+        zoneInfoHTML += `<h3>PokÃ©mon Encontrados AquÃ­</h3>`;
+        zoneInfoHTML += `<p>Esta zona tiene ${zoneData.pokemonList.length} PokÃ©mon salvajes disponibles. Selecciona una versiÃ³n del juego para ver detalles especÃ­ficos. Haz clic en <strong>Detalles</strong> en cualquier PokÃ©mon para ver informaciÃ³n completa de encuentro.</p>`;
 
         DOM_ELEMENTS.pokemonSection.style.display = 'block';
 
@@ -376,7 +376,7 @@ async function loadPokemonForZone(pokemonList, isTown = false) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de Pokémon...</p>
+            <p>Cargando datos de PokÃ©mon...</p>
         </div>
     `;
 
@@ -393,7 +393,7 @@ async function loadPokemonForAreas(areas) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de Pokémon...</p>
+            <p>Cargando datos de PokÃ©mon...</p>
         </div>
     `;
 
@@ -428,7 +428,7 @@ async function loadPokemonForZones(zones) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de Pokémon...</p>
+            <p>Cargando datos de PokÃ©mon...</p>
         </div>
     `;
 
@@ -503,7 +503,7 @@ function attachPokemonDetailsListeners(allPokemonData) {
 async function fetchPokemonData(pokemonInfo) {
     try {
         const response = await fetch(`${POKEAPI.baseURL}/pokemon/${pokemonInfo.name}`);
-        if (!response.ok) throw new Error('Pokémon no encontrado');
+        if (!response.ok) throw new Error('PokÃ©mon no encontrado');
 
         const data = await response.json();
         const speciesResponse = await fetch(data.species.url);
@@ -516,7 +516,7 @@ async function fetchPokemonData(pokemonInfo) {
         return {
             id: data.id,
             name: data.name,
-            displayName: data.name.charAt(0).toUpperCase() + data.name.slice(1),
+            displayName: data.name.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-'),
             sprite: `${POKEAPI.spriteBaseURL}${data.id}.png`,
             animatedSprite: `${POKEAPI.animatedSpriteURL}${data.id}.gif`,
             types: types,
@@ -535,11 +535,39 @@ async function fetchPokemonData(pokemonInfo) {
             note: pokemonInfo.note
         };
     } catch (error) {
+        const eventPokemon = {
+            'deoxys': { id: 386, types: ['psychic'], height: 1.7, weight: 60.0, abilities: ['pressure'], baseExperience: 270 },
+            'mew': { id: 151, types: ['psychic'], height: 0.4, weight: 4.0, abilities: ['synchronize'], baseExperience: 300 }
+        };
+        const fallback = eventPokemon[pokemonInfo.name];
+        if (fallback) {
+            return {
+                id: fallback.id,
+                name: pokemonInfo.name,
+                displayName: pokemonInfo.name.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-'),
+                sprite: `${POKEAPI.spriteBaseURL}${fallback.id}.png`,
+                animatedSprite: `${POKEAPI.animatedSpriteURL}${fallback.id}.gif`,
+                types: fallback.types,
+                abilities: fallback.abilities,
+                baseExperience: fallback.baseExperience,
+                height: fallback.height,
+                weight: fallback.weight,
+                stats: [{stat: {name: 'hp'}, base_stat: 100}],
+                versions: pokemonInfo.versions,
+                exclusive: pokemonInfo.exclusive,
+                method: pokemonInfo.method,
+                rarity: pokemonInfo.rarity,
+                levelRange: pokemonInfo.levelRange,
+                encounterRate: pokemonInfo.encounterRate,
+                isStarter: pokemonInfo.isStarter || false,
+                note: pokemonInfo.note
+            };
+        }
         return {
             id: 0,
             name: pokemonInfo.name,
-            displayName: pokemonInfo.name,
-            sprite: 'https://via.placeholder.com/80?text=Error',
+            displayName: pokemonInfo.name.split('-').map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('-'),
+            sprite: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png',
             types: [],
             error: true
         };
@@ -562,7 +590,7 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
     if (pokemonArray.length === 0) {
         const message = isTown 
             ? 'En este pueblo/ciudad no hay pokemon salvajes.' 
-            : 'No hay Pokémon disponibles para esta versión.';
+            : 'No hay PokÃ©mon disponibles para esta versiÃ³n.';
         DOM_ELEMENTS.pokemonGrid.innerHTML = `
             <div class="error-message">
                 <p>${message}</p>
@@ -571,20 +599,21 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
         return;
     }
 
-    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
+    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'encounter', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
-        'starter': 'Pokémon Inicial',
+        'starter': 'PokÃ©mon Inicial',
         'walk': 'Caminando',
         'surf': 'Surfeando',
-        'old-rod': 'Caña Vieja',
-        'good-rod': 'Caña Buena',
-        'super-rod': 'Supercaña',
+        'old-rod': 'CaÃ±a Vieja',
+        'good-rod': 'CaÃ±a Buena',
+        'super-rod': 'SupercaÃ±a',
         'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
+        'encounter': 'Encuentro',
         'egg': 'Huevo',
         'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir Fósil'
+        'fossil': 'Revivir FÃ³sil'
     };
 
     const groupedByMethod = {};
@@ -618,23 +647,24 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
 
 function renderPokemonGridHTML(pokemonArray) {
     if (pokemonArray.length === 0) {
-        return `<div class="error-message"><p>No hay Pokémon disponibles para esta zona/versión.</p></div>`;
+        return `<div class="error-message"><p>No hay PokÃ©mon disponibles para esta zona/versiÃ³n.</p></div>`;
     }
 
-    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'egg', 'gift', 'trade', 'fossil'];
+    const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'encounter', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
-        'starter': 'Pokémon Inicial',
+        'starter': 'PokÃ©mon Inicial',
         'walk': 'Caminando',
         'surf': 'Surfeando',
-        'old-rod': 'Caña Vieja',
-        'good-rod': 'Caña Buena',
-        'super-rod': 'Supercaña',
+        'old-rod': 'CaÃ±a Vieja',
+        'good-rod': 'CaÃ±a Buena',
+        'super-rod': 'SupercaÃ±a',
         'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
+        'encounter': 'Encuentro',
         'egg': 'Huevo',
         'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir Fósil'
+        'fossil': 'Revivir FÃ³sil'
     };
 
     const groupedByMethod = {};
@@ -677,12 +707,12 @@ function createPokemonCard(pokemon) {
         : '';
 
     const starterBadge = pokemon.isStarter 
-        ? '<span class="starter-badge" title="Pokémon Inicial"><i class="fas fa-star" aria-hidden="true"></i> Starter</span>'
+        ? '<span class="starter-badge" title="PokÃ©mon Inicial"><i class="fas fa-star" aria-hidden="true"></i> Starter</span>'
         : '';
 
     const versionIndicators = `
         <div class="version-indicators" aria-hidden="true">
-            <span class="version-box ${pokemon.versions && pokemon.versions.includes('ruby') ? 'active-ruby' : ''}" title="Rubí">R</span>
+            <span class="version-box ${pokemon.versions && pokemon.versions.includes('ruby') ? 'active-ruby' : ''}" title="RubÃ­">R</span>
             <span class="version-box ${pokemon.versions && pokemon.versions.includes('sapphire') ? 'active-sapphire' : ''}" title="Zafiro">Z</span>
             <span class="version-box ${pokemon.versions && pokemon.versions.includes('emerald') ? 'active-emerald' : ''}" title="Esmeralda">E</span>
         </div>
@@ -727,14 +757,14 @@ function createPokemonCard(pokemon) {
                     <span class="detail-label">Rareza:</span>
                 </div>
                 <div>
-                    <span class="detail-value">${pokemon.rarity || 'común'}</span>
+                    <span class="detail-value">${pokemon.rarity || 'comÃºn'}</span>
                 </div>
             </div>
 
             <div class="encounter-info">
-                <p><strong>Método:</strong> ${getMethodLabel(pokemon.method)}</p>
+                <p><strong>MÃ©todo:</strong> ${getMethodLabel(pokemon.method)}</p>
                 ${pokemon.levelRange ? `<p><strong>Nivel:</strong> ${pokemon.levelRange}</p>` : ''}
-                ${pokemon.encounterRate ? `<p><strong>Aparición:</strong> ${pokemon.encounterRate}</p>` : ''}
+                ${pokemon.encounterRate ? `<p><strong>ApariciÃ³n:</strong> ${pokemon.encounterRate}</p>` : ''}
                 ${encounterNote}
                 <button class="pokemon-details-btn" data-pokemon="${pokemon.name}" title="Ver detalles completos" aria-label="Ver detalles de ${pokemon.displayName}">
                     <i class="fas fa-info-circle" aria-hidden="true"></i> Detalles
@@ -748,15 +778,19 @@ function getMethodLabel(method) {
     const methodLabels = {
         'walk': 'A pie (Caminando)',
         'surf': 'Surfeando',
-        'old-rod': 'Caña vieja',
-        'good-rod': 'Caña buena',
-        'super-rod': 'Supercaña',
+        'old-rod': 'CaÃ±a vieja',
+        'good-rod': 'CaÃ±a buena',
+        'super-rod': 'SupercaÃ±a',
         'dive': 'Buceando',
-        'starter': 'Pokémon Inicial',
+        'rock-smash': 'Golpe Roca',
+        'starter': 'PokÃ©mon Inicial',
+        'encounter': 'Encuentro',
+        'egg': 'Huevo',
+        'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir Fósil'
+        'fossil': 'Revivir FÃ³sil'
     };
-    return methodLabels[method] || (method.charAt(0).toUpperCase() + method.slice(1));
+    return methodLabels[method] || (method ? method.charAt(0).toUpperCase() + method.slice(1) : 'Desconocido');
 }
 
 function setActiveVersion(version) {
@@ -840,12 +874,12 @@ async function fetchPokemonSpeciesDetails(pokemonName) {
 }
 
 function formatGenderRatio(genderRate) {
-    if (genderRate === -1) return 'Sin género';
-    if (genderRate === 0) return '100% ♂ Macho';
-    if (genderRate === 8) return '100% ♀ Hembra';
+    if (genderRate === -1) return 'Sin gÃ©nero';
+    if (genderRate === 0) return '100% â™‚ Macho';
+    if (genderRate === 8) return '100% â™€ Hembra';
     const femalePercent = (genderRate / 8) * 100;
     const malePercent = 100 - femalePercent;
-    return `${malePercent.toFixed(0)}% ♂ / ${femalePercent.toFixed(0)}% ♀`;
+    return `${malePercent.toFixed(0)}% â™‚ / ${femalePercent.toFixed(0)}% â™€`;
 }
 
 function openPokemonDetailsModal(pokemon, encounters, speciesDetails) {
@@ -863,9 +897,9 @@ function openPokemonDetailsModal(pokemon, encounters, speciesDetails) {
             </div>
             <div class="modal-content">
                 <div class="modal-section">
-                    <h4>Información de Especie</h4>
+                    <h4>InformaciÃ³n de Especie</h4>
                     <div class="species-info">
-                        <p><strong>Género:</strong> ${formatGenderRatio(speciesDetails.genderRate)}</p>
+                        <p><strong>GÃ©nero:</strong> ${formatGenderRatio(speciesDetails.genderRate)}</p>
                         <p><strong>Tasa de Captura:</strong> ${speciesDetails.captureRate}/255</p>
                         <p><strong>Ciclos de Huevo:</strong> ${speciesDetails.hatchCounter}</p>
                     </div>
@@ -935,4 +969,69 @@ window.addEventListener('beforeunload', cleanupEventListeners);
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
+    
+    initializeKeyboardShortcuts();
+    enhanceAccessibility();
+    optimizeImageLoading();
 });
+
+function initializeKeyboardShortcuts() {
+    document.addEventListener('keydown', function(e) {
+        const searchInput = document.getElementById('zone-search');
+        
+        if (e.key === 'Escape') {
+            if (DOM_ELEMENTS.zoneDetailView && DOM_ELEMENTS.zoneDetailView.style.display === 'block') {
+                showMainView();
+            }
+            searchInput?.blur();
+        }
+        
+        if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+            e.preventDefault();
+            searchInput?.focus();
+        }
+        
+        if (DOM_ELEMENTS.zoneDetailView && DOM_ELEMENTS.zoneDetailView.style.display === 'block') {
+            if (e.key === 'ArrowLeft') {
+                navigatePrevZone();
+            } else if (e.key === 'ArrowRight') {
+                navigateNextZone();
+            }
+        }
+    });
+}
+
+function enhanceAccessibility() {
+    document.querySelectorAll('[role="button"]:not(button)').forEach(el => {
+        if (!el.getAttribute('tabindex')) {
+            el.setAttribute('tabindex', '0');
+        }
+    });
+    
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    headings.forEach((heading, index) => {
+        if (!heading.id) {
+            heading.id = `heading-${index}`;
+        }
+    });
+}
+
+function optimizeImageLoading() {
+    const images = document.querySelectorAll('img');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
+
+
+
