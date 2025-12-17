@@ -1,0 +1,25 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Herramientas de desarrollo
+.zencoder/
+*.log
+
+# Node (si se usa en el futuro)
+node_modules/
+npm-debug.log
+
+# Archivos locales
+.env
+.env.local
+*.bak

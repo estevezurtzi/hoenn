@@ -1638,7 +1638,7 @@
           "versions": ["ruby", "sapphire", "emerald"],
           "method": "surf",
           "rarity": "muy común",
-          "levelRange": "5-35%",
+          "levelRange": "5-35",
           "encounterRate": "100%"
         },
         {
@@ -7508,6 +7508,151 @@
         },
         {
           "name": "lugia",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "70",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "cueva-cambiante": {
+      "name": "Cueva Cambiante",
+      "description": "Una cueva misteriosa que aparece solo en Pokémon Esmeralda, ubicada en la Ruta 103. Su nombre proviene de que los Pokémon que aparecen en ella pueden cambiar. Inicialmente solo aparece Zubat, pero mediante un evento puede cambiar para mostrar otros Pokémon de generaciones anteriores. Cerca de la entrada hay unas huellas enormes, pero no se sabe de qué son.",
+      "image": "images/Cueva_Cambiante.jpg",
+      "type": "Cueva Mágica",
+      "importance": "Ubicación donde se pueden capturar Pokémon raros de generaciones anteriores.",
+      "connections": ["Ruta 103"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "zubat",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "muy común",
+          "levelRange": "6-16",
+          "encounterRate": "100%"
+        },
+        {
+          "name": "mareep",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "3-13",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "aipom",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "18-28",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "pineco",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "19-29",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "shuckle",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "18-28",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "teddiursa",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "18-28",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "houndour",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "12-20",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "stantler",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "18-28",
+          "encounterRate": "evento"
+        },
+        {
+          "name": "smeargle",
+          "versions": ["emerald"],
+          "method": "walk",
+          "rarity": "raro",
+          "levelRange": "18-28",
+          "encounterRate": "evento"
+        }
+      ]
+    },
+    "guarida-magma-aqua": {
+      "name": "Guarida Magma / Guarida Aqua",
+      "description": "La guarida es la base del Equipo Magma (en Rubí) o del Equipo Aqua (en Zafiro y Esmeralda), donde tienen guardado el submarino de investigación del Capitán Babor. Se encuentra cerca de Ciudad Calagua, al sur del pueblo, accesible usando Surf hacia arriba. El objetivo principal es derrotar al equipo correspondiente y recuperar el submarino robado.",
+      "image": "images/Guarida_Magma.jpg",
+      "type": "Guarida del Equipo",
+      "importance": "Centro de operaciones del Equipo Magma o Aqua. Ubicación importante en la trama principal.",
+      "connections": ["Ciudad Calagua", "Ruta 124"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "electrode",
+          "versions": ["ruby", "sapphire", "emerald"],
+          "method": "encounter",
+          "rarity": "muy raro",
+          "levelRange": "30",
+          "encounterRate": "100%",
+          "note": "Camuflado como objeto en la guarida"
+        }
+      ]
+    },
+    "cueva-marina": {
+      "name": "Cueva Marina",
+      "description": "Una cueva que aparece aleatoriamente en Pokémon Esmeralda entre las Rutas 105, 125, 127 o 129, donde vive Kyogre, el Pokémon legendario de tipo agua. Para encontrarla, es necesario visitar el Instituto Meteorológico y hablar con el científico que menciona lluvias intensas. Requiere un Pokémon que sepa Buceo para acceder a ella.",
+      "image": "images/Cueva_Marina.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar del legendario Kyogre. Solo accesible tras vencer la Liga Pokémon.",
+      "connections": ["Ruta 105", "Ruta 125", "Ruta 127", "Ruta 129"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "kyogre",
+          "versions": ["emerald"],
+          "method": "encounter",
+          "rarity": "legendario",
+          "levelRange": "70",
+          "encounterRate": "100%"
+        }
+      ]
+    },
+    "cueva-terrena": {
+      "name": "Cueva Terrena",
+      "description": "Una cueva que aparece aleatoriamente en Pokémon Esmeralda entre varias rutas, donde vive Groudon, el Pokémon legendario de tipo tierra. Para encontrarla, es necesario visitar el Instituto Meteorológico tras vencer la Liga Pokémon y hablar con el meteorólogo que menciona sequía en una ruta determinada. Es la contraparte de la Cueva Marina, y solo una puede existir a la vez.",
+      "image": "images/Cueva_Terrena.jpg",
+      "type": "Cueva Legendaria",
+      "importance": "Hogar del legendario Groudon. Solo accesible tras vencer la Liga Pokémon.",
+      "connections": ["Ruta 111", "Ruta 120", "Ruta 131"],
+      "isTown": false,
+      "locationAreaId": null,
+      "pokemonList": [
+        {
+          "name": "groudon",
           "versions": ["emerald"],
           "method": "encounter",
           "rarity": "legendario",

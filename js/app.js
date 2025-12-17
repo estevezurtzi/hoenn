@@ -12,7 +12,7 @@ let APP_STATE = {
     versionMap: {},
     zoneEncounters: {},
     pokemonSpecies: {},
-    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'route117', 'route118', 'route119', 'route120', 'route121', 'route122', 'route123', 'route124', 'route125', 'route126', 'route127', 'route128', 'route129', 'route130', 'route131', 'route132', 'route133', 'route134', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109', 'instituto-meteorologico', 'monte-pirico', 'cueva-cardumen', 'caverna-abisal', 'pilar-celeste', 'calle-victoria', 'tumba-antigua', 'cueva-insular', 'ruinas-desierto', 'cueva-ancestral', 'isla-del-sur', 'isla-espejismo', 'frente-batalla', 'zona-safari', 'malvalanova', 'senda-ignea', 'desfiladero', 'isla-origen', 'roca-ombligo', 'isla-suprema'],
+    zoneOrder: ['littleroot', 'route101', 'oldale', 'route102', 'route103', 'petalburg', 'petalburgforest', 'route104', 'route110', 'route111', 'route112', 'route113', 'route114', 'route115', 'route116', 'route117', 'route118', 'route119', 'route120', 'route121', 'route122', 'route123', 'route124', 'route125', 'route126', 'route127', 'route128', 'route129', 'route130', 'route131', 'route132', 'route133', 'route134', 'tunnel-fervergal', 'verdanturf', 'route105', 'route106', 'granite-cave', 'meteor-falls', 'dewford', 'ferrica', 'mauville', 'slateport', 'fallarbor', 'lavaridge', 'fortree', 'lilycove', 'mossdeep', 'sootopolis', 'pacifidlog', 'evergrande', 'route107', 'route108', 'abandoned-ship', 'mirage-tower', 'route109', 'instituto-meteorologico', 'monte-pirico', 'cueva-cardumen', 'caverna-abisal', 'pilar-celeste', 'calle-victoria', 'tumba-antigua', 'cueva-insular', 'ruinas-desierto', 'cueva-ancestral', 'isla-del-sur', 'isla-espejismo', 'frente-batalla', 'zona-safari', 'malvalanova', 'senda-ignea', 'desfiladero', 'isla-origen', 'roca-ombligo', 'cueva-cambiante', 'guarida-magma-aqua', 'cueva-marina', 'cueva-terrena', 'isla-suprema'],
     versionGroups: {
         'all': [],
         'ruby': ['ruby'],
@@ -215,17 +215,60 @@ function initializeSearchFunctionality() {
     APP_STATE.eventListeners.push({ element: document, event: 'click', handler: handleDocumentClick });
 }
 
+function searchPokemonInZones(searchTerm) {
+    const results = [];
+    
+    Object.entries(APP_STATE.zonesData).forEach(([zoneId, zoneData]) => {
+        if (zoneData.pokemonList) {
+            zoneData.pokemonList.forEach(pokemon => {
+                if (pokemon.name.toLowerCase().includes(searchTerm)) {
+                    results.push({
+                        pokemonName: pokemon.name,
+                        zoneName: zoneData.name,
+                        zoneId: zoneId,
+                        method: pokemon.method,
+                        rarity: pokemon.rarity || 'desconocida',
+                        levelRange: pokemon.levelRange || 'N/A'
+                    });
+                }
+            });
+        }
+        
+        if (zoneData.areas) {
+            zoneData.areas.forEach(area => {
+                if (area.pokemonList) {
+                    area.pokemonList.forEach(pokemon => {
+                        if (pokemon.name.toLowerCase().includes(searchTerm)) {
+                            results.push({
+                                pokemonName: pokemon.name,
+                                zoneName: `${zoneData.name} - ${area.name}`,
+                                zoneId: zoneId,
+                                method: pokemon.method,
+                                rarity: pokemon.rarity || 'desconocida',
+                                levelRange: pokemon.levelRange || 'N/A'
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+    
+    return results;
+}
+
 function showSearchSuggestions(searchTerm) {
     const suggestionsContainer = document.getElementById('search-suggestions');
     const cards = document.querySelectorAll('.zone-card');
-    const matches = [];
+    const zoneMatches = [];
+    const pokemonMatches = searchPokemonInZones(searchTerm);
 
     cards.forEach(card => {
         const title = card.querySelector('h3').textContent;
         const desc = card.querySelector('.zone-desc').textContent;
         
         if (title.toLowerCase().includes(searchTerm) || desc.toLowerCase().includes(searchTerm)) {
-            matches.push({
+            zoneMatches.push({
                 title: title,
                 zone: card.dataset.zone,
                 type: card.dataset.type
@@ -233,17 +276,71 @@ function showSearchSuggestions(searchTerm) {
         }
     });
 
-    if (matches.length === 0) {
-        suggestionsContainer.innerHTML = '<div class="search-suggestion-item">No se encontraron zonas</div>';
-    } else {
-        suggestionsContainer.innerHTML = matches.slice(0, 8).map(match => `
+    let html = '';
+    
+    if (pokemonMatches.length > 0) {
+        html += '<div class="search-group"><strong style="padding: 8px 12px; display: block; color: var(--text-secondary); font-size: 0.85em;">POKÉMON ENCONTRADOS:</strong>';
+        
+        const uniquePokemon = {};
+        pokemonMatches.forEach(match => {
+            if (!uniquePokemon[match.pokemonName]) {
+                uniquePokemon[match.pokemonName] = [];
+            }
+            uniquePokemon[match.pokemonName].push(match);
+        });
+        
+        Object.entries(uniquePokemon).slice(0, 5).forEach(([pokemonName, zones]) => {
+            html += `
+                <div class="search-suggestion-item pokemon-result" role="option">
+                    <strong style="text-transform: capitalize;">🔍 ${pokemonName}</strong>
+                    <div style="margin-top: 6px; font-size: 0.9em;">
+                        <small style="color: var(--text-secondary);">Aparece en ${zones.length} zona${zones.length > 1 ? 's' : ''}:</small>
+                        <div style="margin-top: 4px; padding-left: 8px; border-left: 2px solid var(--primary-color);">
+                            ${zones.slice(0, 3).map(z => `
+                                <div class="pokemon-zone-info" data-zone="${z.zoneId}" style="cursor: pointer; padding: 3px 0; color: var(--text-primary);">
+                                    • ${z.zoneName} <span style="color: var(--text-secondary); font-size: 0.85em;">(${z.rarity}${z.levelRange && z.levelRange !== 'N/A' ? `, Nv. ${z.levelRange}` : ''})</span>
+                                </div>
+                            `).join('')}
+                            ${zones.length > 3 ? `<small style="color: var(--text-secondary);">+${zones.length - 3} zona${zones.length - 3 > 1 ? 's' : ''} más</small>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += '</div>';
+    }
+    
+    if (zoneMatches.length > 0) {
+        if (pokemonMatches.length > 0) {
+            html += '<div class="search-group" style="border-top: 1px solid rgba(74, 216, 122, 0.1); margin-top: 8px;"><strong style="padding: 8px 12px; display: block; color: var(--text-secondary); font-size: 0.85em;">ZONAS:</strong>';
+        }
+        
+        html += zoneMatches.slice(0, pokemonMatches.length > 0 ? 5 : 8).map(match => `
             <div class="search-suggestion-item" data-zone="${match.zone}" role="option">
                 <strong>${match.title}</strong>
                 <br><small style="color: var(--text-secondary);">${capitalizeFirst(match.type)}</small>
             </div>
         `).join('');
+        
+        if (pokemonMatches.length > 0) {
+            html += '</div>';
+        }
+    }
 
-        suggestionsContainer.querySelectorAll('.search-suggestion-item').forEach(item => {
+    if (zoneMatches.length === 0 && pokemonMatches.length === 0) {
+        suggestionsContainer.innerHTML = '<div class="search-suggestion-item">No se encontraron resultados</div>';
+    } else {
+        suggestionsContainer.innerHTML = html;
+
+        suggestionsContainer.querySelectorAll('.search-suggestion-item[data-zone]').forEach(item => {
+            item.addEventListener('click', function() {
+                const zoneId = this.dataset.zone;
+                loadZoneDetail(zoneId);
+            });
+        });
+        
+        suggestionsContainer.querySelectorAll('.pokemon-zone-info').forEach(item => {
             item.addEventListener('click', function() {
                 const zoneId = this.dataset.zone;
                 loadZoneDetail(zoneId);
@@ -286,14 +383,14 @@ async function loadZoneDetail(zoneId) {
     DOM_ELEMENTS.zoneInfoContainer.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando informaciÃ³n de la zona...</p>
+            <p>Cargando información de la zona...</p>
         </div>
     `;
 
     let zoneInfoHTML = `
         <div class="zone-info">
             <div>
-                <h3>InformaciÃ³n de la Zona</h3>
+                <h3>Información de la Zona</h3>
                 <p class="zone-description">${zoneData.description}</p>
                 <div class="zone-meta">
                     <p><strong>Tipo:</strong> ${zoneData.type}</p>
@@ -317,7 +414,7 @@ async function loadZoneDetail(zoneId) {
                 <div class="cave-area">
                     <h4>${area.name}</h4>
                     <p class="area-description">${area.description}</p>
-                    <p class="pokemon-count"><strong>${area.pokemonList.length} PokÃ©mon</strong> encontrados en esta zona</p>
+                    <p class="pokemon-count"><strong>${area.pokemonList.length} Pokémon</strong> encontrados en esta zona</p>
                 </div>
             `;
         }
@@ -333,7 +430,7 @@ async function loadZoneDetail(zoneId) {
 
         await loadPokemonForAreas(zoneData.areas);
     } else if (zoneData.zones) {
-        zoneInfoHTML += `<h3>PokÃ©mon Encontrados AquÃ­</h3>`;
+        zoneInfoHTML += `<h3>Pokémon Encontrados Aquí</h3>`;
         
         let totalPokemon = 0;
         for (const zone of zoneData.zones) {
@@ -342,7 +439,7 @@ async function loadZoneDetail(zoneId) {
             totalPokemon += uniquePokemon.size;
         }
         
-        zoneInfoHTML += `<p>Esta zona tiene ${totalPokemon} PokÃ©mon salvajes disponibles en diferentes Ã¡reas. Selecciona una versiÃ³n del juego para ver detalles especÃ­ficos.</p>`;
+        zoneInfoHTML += `<p>Esta zona tiene ${totalPokemon} Pokémon salvajes disponibles en diferentes áreas. Selecciona una versión del juego para ver detalles específicos.</p>`;
 
         DOM_ELEMENTS.pokemonSection.style.display = 'block';
 
@@ -353,8 +450,8 @@ async function loadZoneDetail(zoneId) {
 
         await loadPokemonForZones(zoneData.zones);
     } else if (zoneData.pokemonList) {
-        zoneInfoHTML += `<h3>PokÃ©mon Encontrados AquÃ­</h3>`;
-        zoneInfoHTML += `<p>Esta zona tiene ${zoneData.pokemonList.length} PokÃ©mon salvajes disponibles. Selecciona una versiÃ³n del juego para ver detalles especÃ­ficos. Haz clic en <strong>Detalles</strong> en cualquier PokÃ©mon para ver informaciÃ³n completa de encuentro.</p>`;
+        zoneInfoHTML += `<h3>Pokémon Encontrados Aquí</h3>`;
+        zoneInfoHTML += `<p>Esta zona tiene ${zoneData.pokemonList.length} Pokémon salvajes disponibles. Selecciona una versión del juego para ver detalles específicos. Haz clic en <strong>Detalles</strong> en cualquier Pokémon para ver información completa de encuentro.</p>`;
 
         DOM_ELEMENTS.pokemonSection.style.display = 'block';
 
@@ -376,7 +473,7 @@ async function loadPokemonForZone(pokemonList, isTown = false) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de PokÃ©mon...</p>
+            <p>Cargando datos de Pokémon...</p>
         </div>
     `;
 
@@ -393,7 +490,7 @@ async function loadPokemonForAreas(areas) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de PokÃ©mon...</p>
+            <p>Cargando datos de Pokémon...</p>
         </div>
     `;
 
@@ -428,7 +525,7 @@ async function loadPokemonForZones(zones) {
     DOM_ELEMENTS.pokemonGrid.innerHTML = `
         <div class="loading" aria-live="polite" aria-busy="true">
             <div class="loading-spinner" aria-hidden="true"></div>
-            <p>Cargando datos de PokÃ©mon...</p>
+            <p>Cargando datos de Pokémon...</p>
         </div>
     `;
 
@@ -503,7 +600,7 @@ function attachPokemonDetailsListeners(allPokemonData) {
 async function fetchPokemonData(pokemonInfo) {
     try {
         const response = await fetch(`${POKEAPI.baseURL}/pokemon/${pokemonInfo.name}`);
-        if (!response.ok) throw new Error('PokÃ©mon no encontrado');
+        if (!response.ok) throw new Error('Pokémon no encontrado');
 
         const data = await response.json();
         const speciesResponse = await fetch(data.species.url);
@@ -590,7 +687,7 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
     if (pokemonArray.length === 0) {
         const message = isTown 
             ? 'En este pueblo/ciudad no hay pokemon salvajes.' 
-            : 'No hay PokÃ©mon disponibles para esta versiÃ³n.';
+            : 'No hay Pokémon disponibles para esta versión.';
         DOM_ELEMENTS.pokemonGrid.innerHTML = `
             <div class="error-message">
                 <p>${message}</p>
@@ -601,19 +698,19 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
 
     const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'encounter', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
-        'starter': 'PokÃ©mon Inicial',
+        'starter': 'Pokémon Inicial',
         'walk': 'Caminando',
         'surf': 'Surfeando',
-        'old-rod': 'CaÃ±a Vieja',
-        'good-rod': 'CaÃ±a Buena',
-        'super-rod': 'SupercaÃ±a',
+        'old-rod': 'Caña Vieja',
+        'good-rod': 'Caña Buena',
+        'super-rod': 'Supercaña',
         'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
         'encounter': 'Encuentro',
         'egg': 'Huevo',
         'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir FÃ³sil'
+        'fossil': 'Revivir Fósil'
     };
 
     const groupedByMethod = {};
@@ -647,24 +744,24 @@ function renderPokemonGrid(pokemonArray, isTown = false) {
 
 function renderPokemonGridHTML(pokemonArray) {
     if (pokemonArray.length === 0) {
-        return `<div class="error-message"><p>No hay PokÃ©mon disponibles para esta zona/versiÃ³n.</p></div>`;
+        return `<div class="error-message"><p>No hay Pokémon disponibles para esta zona/versión.</p></div>`;
     }
 
     const methodOrder = ['starter', 'walk', 'surf', 'old-rod', 'good-rod', 'super-rod', 'dive', 'rock-smash', 'encounter', 'egg', 'gift', 'trade', 'fossil'];
     const methodLabels = {
-        'starter': 'PokÃ©mon Inicial',
+        'starter': 'Pokémon Inicial',
         'walk': 'Caminando',
         'surf': 'Surfeando',
-        'old-rod': 'CaÃ±a Vieja',
-        'good-rod': 'CaÃ±a Buena',
-        'super-rod': 'SupercaÃ±a',
+        'old-rod': 'Caña Vieja',
+        'good-rod': 'Caña Buena',
+        'super-rod': 'Supercaña',
         'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
         'encounter': 'Encuentro',
         'egg': 'Huevo',
         'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir FÃ³sil'
+        'fossil': 'Revivir Fósil'
     };
 
     const groupedByMethod = {};
@@ -707,12 +804,12 @@ function createPokemonCard(pokemon) {
         : '';
 
     const starterBadge = pokemon.isStarter 
-        ? '<span class="starter-badge" title="PokÃ©mon Inicial"><i class="fas fa-star" aria-hidden="true"></i> Starter</span>'
+        ? '<span class="starter-badge" title="Pokémon Inicial"><i class="fas fa-star" aria-hidden="true"></i> Starter</span>'
         : '';
 
     const versionIndicators = `
         <div class="version-indicators" aria-hidden="true">
-            <span class="version-box ${pokemon.versions && pokemon.versions.includes('ruby') ? 'active-ruby' : ''}" title="RubÃ­">R</span>
+            <span class="version-box ${pokemon.versions && pokemon.versions.includes('ruby') ? 'active-ruby' : ''}" title="Rubí">R</span>
             <span class="version-box ${pokemon.versions && pokemon.versions.includes('sapphire') ? 'active-sapphire' : ''}" title="Zafiro">Z</span>
             <span class="version-box ${pokemon.versions && pokemon.versions.includes('emerald') ? 'active-emerald' : ''}" title="Esmeralda">E</span>
         </div>
@@ -757,14 +854,14 @@ function createPokemonCard(pokemon) {
                     <span class="detail-label">Rareza:</span>
                 </div>
                 <div>
-                    <span class="detail-value">${pokemon.rarity || 'comÃºn'}</span>
+                    <span class="detail-value">${pokemon.rarity || 'común'}</span>
                 </div>
             </div>
 
             <div class="encounter-info">
-                <p><strong>MÃ©todo:</strong> ${getMethodLabel(pokemon.method)}</p>
+                <p><strong>Método:</strong> ${getMethodLabel(pokemon.method)}</p>
                 ${pokemon.levelRange ? `<p><strong>Nivel:</strong> ${pokemon.levelRange}</p>` : ''}
-                ${pokemon.encounterRate ? `<p><strong>ApariciÃ³n:</strong> ${pokemon.encounterRate}</p>` : ''}
+                ${pokemon.encounterRate ? `<p><strong>Aparición:</strong> ${pokemon.encounterRate}</p>` : ''}
                 ${encounterNote}
                 <button class="pokemon-details-btn" data-pokemon="${pokemon.name}" title="Ver detalles completos" aria-label="Ver detalles de ${pokemon.displayName}">
                     <i class="fas fa-info-circle" aria-hidden="true"></i> Detalles
@@ -778,17 +875,17 @@ function getMethodLabel(method) {
     const methodLabels = {
         'walk': 'A pie (Caminando)',
         'surf': 'Surfeando',
-        'old-rod': 'CaÃ±a vieja',
-        'good-rod': 'CaÃ±a buena',
-        'super-rod': 'SupercaÃ±a',
+        'old-rod': 'Caña vieja',
+        'good-rod': 'Caña buena',
+        'super-rod': 'Supercaña',
         'dive': 'Buceando',
         'rock-smash': 'Golpe Roca',
-        'starter': 'PokÃ©mon Inicial',
+        'starter': 'Pokémon Inicial',
         'encounter': 'Encuentro',
         'egg': 'Huevo',
         'gift': 'Regalo',
         'trade': 'Intercambio',
-        'fossil': 'Revivir FÃ³sil'
+        'fossil': 'Revivir Fósil'
     };
     return methodLabels[method] || (method ? method.charAt(0).toUpperCase() + method.slice(1) : 'Desconocido');
 }
@@ -874,12 +971,12 @@ async function fetchPokemonSpeciesDetails(pokemonName) {
 }
 
 function formatGenderRatio(genderRate) {
-    if (genderRate === -1) return 'Sin gÃ©nero';
-    if (genderRate === 0) return '100% â™‚ Macho';
-    if (genderRate === 8) return '100% â™€ Hembra';
+    if (genderRate === -1) return 'Sin género';
+    if (genderRate === 0) return '100% ♂ Macho';
+    if (genderRate === 8) return '100% ♀ Hembra';
     const femalePercent = (genderRate / 8) * 100;
     const malePercent = 100 - femalePercent;
-    return `${malePercent.toFixed(0)}% â™‚ / ${femalePercent.toFixed(0)}% â™€`;
+    return `${malePercent.toFixed(0)}% ♂ / ${femalePercent.toFixed(0)}% ♀`;
 }
 
 function openPokemonDetailsModal(pokemon, encounters, speciesDetails) {
@@ -897,9 +994,9 @@ function openPokemonDetailsModal(pokemon, encounters, speciesDetails) {
             </div>
             <div class="modal-content">
                 <div class="modal-section">
-                    <h4>InformaciÃ³n de Especie</h4>
+                    <h4>Información de Especie</h4>
                     <div class="species-info">
-                        <p><strong>GÃ©nero:</strong> ${formatGenderRatio(speciesDetails.genderRate)}</p>
+                        <p><strong>Género:</strong> ${formatGenderRatio(speciesDetails.genderRate)}</p>
                         <p><strong>Tasa de Captura:</strong> ${speciesDetails.captureRate}/255</p>
                         <p><strong>Ciclos de Huevo:</strong> ${speciesDetails.hatchCounter}</p>
                     </div>
